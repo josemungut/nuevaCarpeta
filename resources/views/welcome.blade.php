@@ -1,8 +1,20 @@
 <x-app-layout>
     <style>
         .imagen {
-            width: 60%;
+            width: 100%;
+            margin-left: 50px;
         }
+
+        #nombre {
+            padding-top: 25px;
+            margin-left: 110px;
+        }
+
+        #email {
+            margin-left: 90px;
+        }
+
+        */
     </style>
     <!-- Navbar -->
     <script src="{{ asset('./resoruce/js/prueba.js') }}"></script>
@@ -158,24 +170,29 @@
 
             </div>
             <!-- Card 2 -->
-            <div class="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
-                <div class="px-6">
-                    <div class="pt-6 text-center">
+            <<div class="py-12">
+                <div id="container">
+                    <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15" id="card">
                         @foreach ($profesores as $profesor)
-                            <div class="p-5">
-                                <img class="imagen" src="{{ asset($url . $profesor->imagen) }}">
+                            <div class="max-w-sm ml-15">
+                                <div class="p-5">
+                                    <img class="imagen" src="{{ asset($url . $profesor->imagen) }}">
 
-                                <a href="#">
-                                    <p class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        {{ $profesor->nombre }}</p>
-                                </a>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                    {{ $profesor->apellidos }}
-                                </p>
+                                    <a href="#">
+                                        <h5 id="nombre" class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                            {{ $profesor->nombre }} {{ $profesor->apellidos }}</h5>
+                                    </a>
+                                    <p id="email" class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                        {{ $profesor->email }}
+                                    </p>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
-            </div>
+                </div>
+
+
         </section>
 
         <!-- Contact Header Section -->
