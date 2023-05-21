@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class entrenador extends Model
+class tipo_actividades extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table = 'entrenador';
+    protected $table = 'tipo_actividad';
 }
 

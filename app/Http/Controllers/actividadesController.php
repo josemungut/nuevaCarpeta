@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\actividades;
+use App\Models\tipo_actividad;
+use App\Models\tipo_actividades;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 
@@ -15,7 +17,8 @@ class actividadesController extends Controller
      */
     public function index()
     {
-        //
+        $clase = tipo_actividades::all();
+        return view('actividades.create')->with('tipo_actividades', $clase);
     }
 
     /**

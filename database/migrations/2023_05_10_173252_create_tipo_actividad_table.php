@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('descripcion');
             $table->string('maximos_alumnos');
+            $table->SoftDeletes();
+                $table->timestamps();
         });
     }
 

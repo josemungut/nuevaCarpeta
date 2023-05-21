@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\instalaciones;
-
+use App\Models\tipo_actividad;
 
 class instalacionesController extends Controller
 {

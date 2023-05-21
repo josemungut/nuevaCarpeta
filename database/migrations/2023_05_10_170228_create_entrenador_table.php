@@ -20,7 +20,7 @@ return new class extends Migration
                 $table->string('email', 50);
                 $table->string('telefono', 20);
                 $table->string('imagen');
-                $table->softDeletes();
+                $table->SoftDeletes();
                 $table->timestamps();
             });
     }

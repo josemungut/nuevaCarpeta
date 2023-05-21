@@ -60,9 +60,6 @@ Route::get('aviso-legal', function () {
     return view('aviso-legal.index');
 })->name('aviso-legal');
 
-Route::get('actividades', function () {
-    return view('actividades.create');
-})->name('actividades');
 
 
 // Route::get('instalaciones', function () {
@@ -79,6 +76,7 @@ Route::get('landing', function () {
 });
 
 Route::resource('instalaciones', instalacionesController::class)->middleware(['auth','verified']);
+Route::resource('actividades', actividadesController::class)->middleware(['auth','verified']);
 
 
 require __DIR__ . '/auth.php';

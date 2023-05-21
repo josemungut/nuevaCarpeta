@@ -66,7 +66,7 @@
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="añadir">
                             <b>{{ __('Inicio') }}</b>
                         </x-nav-link>
-                        <x-nav-link :href="route('actividades')" :active="request()->routeIs('actividades')" class="añadir">
+                        <x-nav-link :href="route('actividades.index')" :active="request()->routeIs('actividades.index')" class="añadir">
                             <b>{{ __('Actividades') }}</b>
                         </x-nav-link>
                         <x-nav-link :href="route('instalaciones.index')" :active="request()->routeIs('instalaciones.index')" class="añadir">

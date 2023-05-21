@@ -22,6 +22,8 @@ return new class extends Migration
             $table->foreignId('id_tipo_actividad')->constrained('tipo_actividad');
             $table->foreignId('id_sala')->constrained('sala');
             $table->foreignId('id_entrenador')->constrained('entrenador');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
