@@ -73,7 +73,7 @@
                             <b>{{ __('Instalaciones') }}</b>
                         </x-nav-link>
                         @if (Auth::user()->tipo == 'admin')
-                            <x-nav-link :href="route('actividades')" :active="request()->routeIs('actividades')" class="añadir">
+                            <x-nav-link :href="route('actividades.create')" :active="request()->routeIs('actividades.create ')" class="añadir">
                                 <b>{{ __('Añadir clase') }}</b>
                             </x-nav-link>
                         @endif

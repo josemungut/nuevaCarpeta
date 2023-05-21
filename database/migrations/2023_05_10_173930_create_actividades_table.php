@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
-            $table->date('imagen');
+            $table->string('imagen');
             $table->string('nombre', 50);
-            $table->foreignId('id_tipo_actividad')->constrained('tipo_actividad');
-            $table->foreignId('id_sala')->constrained('sala');
-            $table->foreignId('id_entrenador')->constrained('entrenador');
+            $table->foreignId('id_tipo_actividad')->constrained('tipo_actividad')->default(0);
+            $table->foreignId('id_sala')->constrained('sala')->default(0);
+            $table->foreignId('id_entrenador')->constrained('entrenador')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

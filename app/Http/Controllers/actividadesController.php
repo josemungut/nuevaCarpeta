@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\actividades;
+use App\Models\entrenador;
+use App\Models\sala;
 use App\Models\tipo_actividad;
 use App\Models\tipo_actividades;
 use Illuminate\Http\Request;
@@ -17,8 +19,9 @@ class actividadesController extends Controller
      */
     public function index()
     {
-        $clase = tipo_actividades::all();
-        return view('actividades.create')->with('tipo_actividades', $clase);
+
+        $clase4 = actividades::all();
+        return view('actividades.index')->with('actividades', $clase4);
     }
 
     /**
@@ -43,19 +46,19 @@ class actividadesController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $clase = new actividades();
-            $clase->nombre = $request->nombre;
-            $clase->fecha_inicio = $request->fecha_inicio;
-            $clase->fecha_fin = $request->fecha_fin;
-            $nombrefoto = time() . "-" . $request->file('imagen')->getClientOriginalName();
-            $clase->imagen = $nombrefoto;
-            $clase->saveOrFail();
-            $request->file('imagen')->storeAs('/public/', $nombrefoto);
-            return redirect()->route('actividades.index')->with('status', "participante introducido");
-        } catch (QueryException $ex) {
-            echo $ex;
-        }
+
+        $clase = new actividades();
+        $clase->nombre = $request->nombre;
+        $clase->fecha_inicio = $request->fecha_inicio;
+        $clase->fecha_fin = $request->fecha_fin;
+        $clase->id_tipo_actividad = $request->id_tipo_actividad;
+        $clase->id_sala = $request->id_sala;
+        $clase->id_entrenador = $request->id_entrenador;
+        $nombrefoto = time() . "-" . $request->file('imagen')->getClientOriginalName();
+        $clase->imagen = $nombrefoto;
+        $clase->saveOrFail();
+        $request->file('imagen')->storeAs('/public/', $nombrefoto);
+        return redirect()->route('actividades.index')->with('status', "participante introducido");
     }
 
     /**
