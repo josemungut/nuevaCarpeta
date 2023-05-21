@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\informacionlandingpage;
-use App\Models\landing;
 use Illuminate\Http\Request;
+use App\Models\instalaciones;
 
-class LandingController extends Controller
+
+class instalacionesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,10 @@ class LandingController extends Controller
      */
     public function index()
     {
-        $clase = informacionlandingpage::all();
+        $clase = instalaciones::all();
         $url = 'storage/';
-        return view('landing')->with('hola', $clase)->with('url', $url);
+        return view('instalaciones.index')->with('hola', $clase)->with('url', $url);
+
 
     }
 
@@ -50,9 +51,10 @@ class LandingController extends Controller
      */
     public function show($id)
     {
-        //
+        $bucarId = instalaciones::findOrFail($id);
+        $url = 'storage/';
+        return view('instalaciones.show')->with('profesores', $bucarId)->with('url', $url);
     }
-
     /**
      * Show the form for editing the specified resource.
      *

@@ -1,10 +1,18 @@
 <?php
 
+use App\Http\Controllers\actividadesController;
+use App\Http\Controllers\claseController;
 use App\Http\Controllers\contactoController;
 use App\Http\Controllers\frutasController;
+use App\Http\Controllers\instalacionesController;
 use App\Http\Controllers\landingcontroller;
 use App\Http\Controllers\ProfileController;
 use App\Models\entrenador;
+use App\Models\informacionlandingpage;
+use App\Http\Controllers\salaController;
+
+use App\Models\instalaciones;
+use App\Models\sala;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +25,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
-    $profesores=entrenador::all();
+    $profesores = entrenador::all();
     $url = 'storage/';
-    return view('welcome')->with('profesores',$profesores)->with('url', $url);;
+    return view('welcome')->with('profesores', $profesores)->with('url', $url);;
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,35 +47,38 @@ Route::get('inicio', function () {
     return view('inicio');
 })->name('inicio');
 
+
+Route::get('politicas-de-cookies', function () {
+    return view('politicas-de-cookies.index');
+})->name('politicas-de-cookies');
+
+Route::get('politicas-de-privacidad', function () {
+    return view('politicas-de-privacidad.index');
+})->name('politicas-de-privacidad');
+
+Route::get('aviso-legal', function () {
+    return view('aviso-legal.index');
+})->name('aviso-legal');
+
 Route::get('actividades', function () {
-    return view('actividades');
+    return view('actividades.create');
 })->name('actividades');
 
 
-Route::get('instalaciones', function () {
-    return view('instalaciones');
-})->name('instalaciones');
+// Route::get('instalaciones', function () {
+//     $profesores = instalaciones::all();
+//     $url = 'storage/';
+//     return view('instalaciones.index')->with('hola',$profesores)->with('url',$url);
+// })->name('instalaciones');
 
 
-
-Route::prefix('fruteria')->group(function () {
-    Route::get('/frutas', [frutasController::class, 'index'])->name('frutas');
-    Route::post('/frutas', [frutasController::class, 'datos'])->name('postfrutas');
-    Route::get('naranjas/{i}', [frutasController::class, 'naranjas'])->name('naranjas');
-    Route::get('peras', [frutasController::class, 'peras'])->name('peras');
+Route::get('landing', function () {
+    $profesores = informacionlandingpage::all();
+    $url = 'storage/';
+    return view('landing')->with('hola', $profesores)->with('url', $url);;
 });
 
-
-
-Route::get('contactos/{nombre}/{edad}', [contactoController::class, 'index'])->name('contactos')->middleware('mayor:10');
-Route::resource('landing', landingcontroller::class);
-
-
-
-Route::get('datos', function () {
-    return view('miapp.datos');
-})->name('datos')->middleware('auth');
-
+Route::resource('instalaciones', instalacionesController::class)->middleware(['auth','verified']);
 
 
 require __DIR__ . '/auth.php';

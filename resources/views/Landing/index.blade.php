@@ -1,553 +1,117 @@
-    <style>
-        .titulo {
-            margin-top: 50px;
-            margin-left: 750px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 20px;
-        }
+<x-app-layout>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* Override UGG site */
+#main {width: 100%; padding:0;}
+.content-asset p {margin:0 auto;}
+.breadcrumb {display:none;}
 
-        @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+/* Helpers */
+/**************************/
+.margin-top-10 {padding-top:10px;}
+.margin-bot-10 {padding-bottom:10px;}
 
-        :root {
-            --primary: #094b65;
-        }
+/* Typography */
+/**************************/
+#parallax-world-of-ugg h1 {font-family:'Oswald', sans-serif; font-size:24px; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;}
+#parallax-world-of-ugg h2 {font-family:'Oswald', sans-serif; font-size:70px; letter-spacing:10px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.9;}
+#parallax-world-of-ugg h3 {font-family:'Oswald', sans-serif; font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;}
+#parallax-world-of-ugg p {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:14px; line-height:24px;}
+.first-character {font-weight:400; float: left; font-size: 84px; line-height: 64px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Source Sans Pro', sans-serif;}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+.sc {color: #3b8595;}
+.ny {color: #3d3c3a;}
+.atw {color: #c48660;}
 
-        body {
-            overflow-x: hidden;
-            background: #fff;
-            min-height: 100vh;
-        }
+/* Section - Title */
+/**************************/
+#parallax-world-of-ugg .title {background: white; padding: 60px; margin:0 auto; text-align:center;}
+#parallax-world-of-ugg .title h1 {font-size:35px; letter-spacing:8px;}
 
-        #header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
+/* Section - Block */
+/**************************/
+#parallax-world-of-ugg .block {background: white; padding: 60px; width:820px; margin:0 auto; text-align:justify;}
+#parallax-world-of-ugg .block-gray {background: #f2f2f2;padding: 60px;}
+#parallax-world-of-ugg .section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
 
-        #header .logo {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 2em;
-            text-decoration: none;
-        }
+/* Section - Parallax */
+/**************************/
+#parallax-world-of-ugg .parallax-one {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1415018255745-0ec3f7aee47b?dpr=1&auto=format&fit=crop&w=1500&h=938&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
+#parallax-world-of-ugg .parallax-two {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1432163230927-a32e4fd5a326?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
+#parallax-world-of-ugg .parallax-three {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1440688807730-73e4e2169fb8?dpr=1&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
 
-        #header ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* Extras */
+/**************************/
+#parallax-world-of-ugg .line-break {border-bottom:1px solid black; width: 150px; margin:0 auto;}
 
-        #header ul li {
-            list-style: none;
-            margin-left: 20px;
-        }
-
-        #header ul li a {
-            text-decoration: none;
-            padding: 6px 15px;
-            color: var(--primary);
-            border-radius: 20px;
-        }
-
-        #header ul li a:hover,
-        #header ul li a.active {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        section::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to top, var(--primary), transparent);
-            z-index: 10;
-        }
-
-        section img {
-            position: absolute;
-            top: 0px;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-
-        section #text {
-            position: absolute;
-            color: var(--primary);
-            font-size: 10vw;
-            text-align: center;
-            line-height: .55em;
-            font-family: 'Rancho', cursive;
-            transform: translatey(-50%);
-        }
-
-        section #text span {
-            font-size: .20em;
-            letter-spacing: 2px;
-            font-weight: 400;
-        }
-
-        #btn {
-            text-decoration: none;
-            display: inline-block;
-            padding: 8px 30px;
-            background: #fff;
-            color: var(--primary);
-            font-size: 1.2em;
-            font-weight: 500;
-            letter-spacing: 2px;
-            border-radius: 40px;
-            transform: translatey(100px);
-        }
-
-        .sec {
-            position: relative;
-            padding: 100px;
-            background: var(--primary);
-        }
-
-        .sec h2 {
-            font-size: 3.5em;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .sec p {
-            font-size: 1em;
-            color: #fff;
-        }
-
-        footer {
-            position: relative;
-            padding: 0px 100px;
-            background: var(--primary);
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-
-
-
-        * {
-            margin: 0;
-            padding: 0;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-family: 'Montserrat';
-            font-weight: normal;
-            color: #444;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .wrapper {
-            width: 90%;
-            margin: 0 auto;
-            max-width: 80rem;
-        }
-
-        .cols {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-        }
-
-        .col {
-            width: calc(25% - 2rem);
-            margin: 1rem;
-            cursor: pointer;
-        }
-
-        .container {
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            -webkit-perspective: 1000px;
-            perspective: 1000px;
-        }
-
-        .front,
-        .back {
-            background-size: cover;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
-            border-radius: 10px;
-            background-position: center;
-            -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            text-align: center;
-            min-height: 280px;
-            height: auto;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 1.5rem;
-        }
-
-        .back {
-            background: #cedce7;
-            background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
-            background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
-            background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
-        }
-
-        .front:after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            content: '';
-            display: block;
-            opacity: .6;
-            background-color: #000;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 10px;
-        }
-
-        .container:hover .front,
-        .container:hover .back {
-            -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        }
-
-        .back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-
-        .inner {
-            -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-            transform: translateY(-50%) translateZ(60px) scale(0.94);
-            top: 50%;
-            position: absolute;
-            left: 0;
-            width: 100%;
-            padding: 2rem;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            outline: 1px solid transparent;
-            -webkit-perspective: inherit;
-            perspective: inherit;
-            z-index: 2;
-        }
-
-        .container .back {
-            -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-        }
-
-        .container .front {
-            -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-        }
-
-        .container:hover .back {
-            -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-        }
-
-        .container:hover .front {
-            -webkit-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-        }
-
-        .front .inner p {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .front .inner p:after {
-            content: '';
-            width: 4rem;
-            height: 2px;
-            position: absolute;
-            background: #C6D4DF;
-            display: block;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            bottom: -.75rem;
-        }
-
-        .front .inner span {
-            color: rgba(255, 255, 255, 0.7);
-            font-family: 'Montserrat';
-            font-weight: 300;
-        }
-
-        @media screen and (max-width: 64rem) {
-            .col {
-                width: calc(33.333333% - 2rem);
-            }
-        }
-
-        @media screen and (max-width: 48rem) {
-            .col {
-                width: calc(50% - 2rem);
-            }
-        }
-
-        @media screen and (max-width: 32rem) {
-            .col {
-                width: 100%;
-                margin: 0 0 2rem 0;
-            }
-        }
+/* Media Queries */
+/**************************/
+@media screen and (max-width: 959px) and (min-width: 768px) {
+  #parallax-world-of-ugg .block {padding: 40px; width:620px;}
+}
+@media screen and (max-width: 767px) {
+  #parallax-world-of-ugg .block {padding: 30px; width:420px;}
+  #parallax-world-of-ugg h2 {font-size:30px;}
+  #parallax-world-of-ugg .block {padding: 30px;}
+  #parallax-world-of-ugg .parallax-one, #parallax-world-of-ugg .parallax-two, #parallax-world-of-ugg .parallax-three {padding-top:100px; padding-bottom:100px;}
+}
+@media screen and (max-width: 479px) {
+  #parallax-world-of-ugg .block {padding: 30px 15px; width:290px;}
+}
     </style>
 
-    <head>
-    </head>
+<div id="parallax-world-of-ugg">
 
-    <body>
-        <!--<header id="header">
-            <a href="#" class="logo">Forest</a>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Destination</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </header>-->
+    <section>
+      <div class="title">
+        <h3>Let's do some</h3>
+        <h1>PARALLAX</h1>
+      </div>
+    </section>
 
-        <Section>
-            <h2 id="text"><span></span><br>PERFECT BODY <br><br> LUCENA</h2>
-
-            <img src="https://user-images.githubusercontent.com/65358991/170092504-132fa547-5ced-40e5-ab64-ded61518fac2.png"
-                id="bird1">
-            <img src="https://user-images.githubusercontent.com/65358991/170092542-9747edcc-fb51-4e21-aaf5-a61119393618.png"
-                id="bird2">
-            <img src="https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png"
-                id="forest">
-
-            <a href="#" id="btn">Explore</a>
-
-            <img src="https://user-images.githubusercontent.com/65358991/170092605-eada6510-d556-45cc-b7fa-9e4d1d258d26.png"
-                id="rocks">
-            <img src="https://user-images.githubusercontent.com/65358991/170092616-5a70c4af-2eed-496f-bde9-b5fcc7142a31.png"
-                id="water">
-        </Section>
-
-        <div class="sec">
-            <div class="wrapper">
-                <div class="cols">
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
-                                <div class="inner">
-                                    @foreach ($hola as $profesor)
-                                        <div
-                                            class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                                            <div class="p-5">
-                                                <a href="#">
-                                                    <h5
-                                                        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                                        {{ $profesor->nombre }}</h5>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    @foreach ($hola as $profesor)
-                                    <div
-                                        class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                                        <div class="p-5">
-                                            <a href="#">
-                                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                                    {{ $profesor->descripcion }}</h5>
-                                            </a>
-                                            </div>
-                                    </div>
-                                @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="url(https://unsplash.it/511/511/)">
-                                <div class="inner">
-                                    <p>Rocogged</p>
-                                    <span>Lorem ipsum</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                        velit quae suscipit c.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
-                                <div class="inner">
-                                    <p>Strizzes</p>
-                                    <span>Lorem ipsum</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                        velit quae suscipit c.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(https://unsplash.it/503/503/)">
-                                <div class="inner">
-                                    <p>Clossyo</p>
-                                    <span>Lorem ipsum</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                        velit quae suscipit c.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(https://unsplash.it/504/504/">
-                                <div class="inner">
-                                    <p>Rendann</p>
-                                    <span>Lorem ipsum</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                        velit quae suscipit c.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(https://unsplash.it/505/505/)">
-                                <div class="inner">
-                                    <p>Reflupper</p>
-                                    <span>Lorem ipsum</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                        velit quae suscipit c.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(https://unsplash.it/506/506/)">
-                                <div class="inner">
-                                    <p>Acirassi</p>
-                                    <span>Lorem ipsum</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                        velit quae suscipit c.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(https://unsplash.it/508/508/)">
-                                <div class="inner">
-                                    <p>Sohanidd</p>
-                                    <span>Lorem ipsum</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                        velit quae suscipit c.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section>
+        <div class="parallax-one">
+          <h2>SOUTHERN CALIFORNIA</h2>
         </div>
+    </section>
 
-        <footer>
-            <a href="http://www.freepik.com">Forest Graphics Designed by brgfx / Freepik</a>
-        </footer>
+    <section>
+      <div class="block">
+        <p><span class="first-character sc">I</span>n 1978, Brian Smith landed in Southern California with a bag of sheepskin boots and hope. He fell in love with the sheepskin experience and was convinced the world would one day share this love. The beaches of Southern California had long been an epicenter of a relaxed, casual lifestyle, a lifestyle that Brian felt was a perfect fit for his brand. So he founded the UGG brand, began selling his sheepskin boots and they were an immediate sensation. By the mid 1980's, the UGG brand became a symbol of relaxed southern California culture, gaining momentum through surf shops and other shops up and down the coast of California, from San Diego to Santa Cruz. UGG boots reached beyond the beach, popping up in big cities and small towns all over, and in every level of society. Girls wore their surfer boyfriend's pair of UGG boots like a letterman jacket. When winter came along, UGG boots were in ski shops and were seen in lodges from Mammoth to Aspen.</p>
+        <p class="line-break margin-top-10"></p>
+        <p class="margin-top-10">The UGG brand began to symbolize those who embraced sport and a relaxed, active lifestyle. More than that, an emotional connection and a true feeling of love began to grow for UGG boots, just as Brian had envisioned. People didn't just like wearing UGG boots, they fell in love with them and literally could not take them off. By the end of the 90's, celebrities and those in the fashion world took notice of the UGG brand. A cultural shift occurred as well - people were embracing, and feeling empowered, by living a more casual lifestyle and UGG became one of the symbols of this lifestyle. By 2000, a love that began on the beaches had become an icon of casual style. It was at this time that the love for UGG grew in the east, over the Rockies and in Chicago. In 2000, UGG Sheepskin boots were first featured on Oprah's Favorite Things® and Oprah emphatically declared that she "LOOOOOVES her UGG boots." From that point on, the world began to notice.</p>
+      </div>
+    </section>
 
+    <section>
+      <div class="parallax-two">
+        <h2>NEW YORK</h2>
+      </div>
+    </section>
 
+    <section>
+      <div class="block">
+        <p><span class="first-character ny">B</span>reaking into the New York fashion world is no easy task. But by the early 2000's, UGG Australia began to take it by storm. The evolution of UGG from a brand that made sheepskin boots, slippers, clogs and sandals for an active, outdoor lifestyle to a brand that was now being touted as a symbol of a stylish, casual and luxurious lifestyle was swift. Much of this was due to a brand repositioning effort that transformed UGG into a high-end luxury footwear maker. As a fashion brand, UGG advertisements now graced the pages of Vogue Magazine as well as other fashion books. In the mid 2000's, the desire for premium casual fashion was popping up all over the world and UGG was now perfectly aligned with this movement.</p>
+        <p class="line-break margin-top-10"></p>
+        <p class="margin-top-10">Fueled by celebrities from coast to coast wearing UGG boots and slippers on their downtime, an entirely new era of fashion was carved out. As a result, the desire and love for UGG increased as people wanted to go deeper into this relaxed UGG experience. UGG began offering numerous color and style variations on their sheepskin boots and slippers. Cold weather boots for women and men and leather casuals were added with great success. What started as a niche item, UGG sheepskin boots were now a must-have staple in everyone's wardrobe. More UGG collections followed, showcasing everything from knit boots to sneakers to wedges, all the while maintaining that luxurious feel UGG is known for all over the world. UGG products were now seen on runways and in fashion shoots from coast to coast. Before long, the love spread even further.</p>
+      </div>
+    </section>
 
-    </body>
+    <section>
+      <div class="parallax-three">
+        <h2>ENCHANTED FOREST</h2>
+      </div>
+    </section>
 
+    <section>
+      <div class="block">
+        <p><span class="first-character atw">W</span>hen the New York fashion community notices your brand, the world soon follows. The widespread love for UGG extended to Europe in the mid-2000's along with the stylish casual movement and demand for premium casual fashion. UGG boots and shoes were now seen walking the streets of London, Paris and Amsterdam with regularity. To meet the rising demand from new fans, UGG opened flagship stores in the UK and an additional location in Moscow. As the love spread farther East, concept stores were opened in Beijing, Shanghai and Tokyo. UGG Australia is now an international brand that is loved by all. This love is a result of a magical combination of the amazing functional benefits of sheepskin and the heightened emotional feeling you get when you slip them on your feet. In short, you just feel better all over when you wear UGG boots, slippers, and shoes.</p>
+        <p class="line-break margin-top-10"></p>
+        <p class="margin-top-10">In 2011, UGG will go back to its roots and focus on bringing the active men that brought the brand to life back with new styles allowing them to love the brand again as well. Partnering with Super Bowl champion and NFL MVP Tom Brady, UGG will invite even more men to feel the love the rest of the world knows so well. UGG will also step into the world of high fashion with UGG Collection. The UGG Collection fuses the timeless craft of Italian shoemaking with the reliable magic of sheepskin, bringing the luxurious feel of UGG to high end fashion. As the love for UGG continues to spread across the world, we have continued to offer new and unexpected ways to experience the brand. The UGG journey continues on and the love for UGG continues to spread.</p>
+      </div>
+    </section>
 
-
+    </div>
+</x-app-layout>

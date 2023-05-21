@@ -14,7 +14,150 @@
             margin-left: 90px;
         }
 
-        */
+        /* REMOVE THIS, USE YOUR OWN  */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, Sans-serif;
+            background-color: #070617;
+        }
+
+        .dummy_page {
+            height: 200px;
+            width: 100%;
+            background-color: #f0f0f0;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 60px 0px;
+        }
+
+        /* STYLES SPECIFIC TO FOOTER  */
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: black;
+        }
+
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: orange;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+
+        */ .titulo {
+            color: orange !important;
+        }
+
+        #politicas{
+            margin-left: 300px !important;
+        }
+
+
     </style>
     <!-- Navbar -->
     <script src="{{ asset('./resoruce/js/prueba.js') }}"></script>
@@ -208,11 +351,13 @@
                 <div class="flex flex-wrap text-center justify-center">
                     <div class="w-full lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold text-white uppercase">
-                            Contact Us
+                            Ventajas de acceder identificado
                         </h2>
                         <p class="text-lg leading-relaxed mt-4 mb-4">
-                            Contact us to ask any questions, aquire a membership, talk to
-                            our trainers or anything else
+                            Disfruta de todas sus ventajas: reserva en nombre de tus beneficiarios, puedes conocer cada
+                            parte de nuestras instalaciones, puedes ser uno mas de nosotros, avonando mensualmente la
+                            matricula reglamentaria, consiguiendo así poder sacar el máximo partido a tu cuerpo
+                            alcanzando el máximo nivel y un largo etc.
                         </p>
                     </div>
                 </div>
@@ -220,7 +365,7 @@
         </section>
 
         <!-- Contact Form -->
-        <section class="relative block py-24 lg:pt-0 bg-black">
+        <!--<section class="relative block py-24 lg:pt-0 bg-black">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
                     <div class="w-full lg:w-6/12 px-4">
@@ -262,49 +407,43 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
+
+
     </main>
 
-    <!-- Footer -->
-    <footer class="relative bg-gray-300 pt-8 pb-6">
-        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style="height: 80px; transform: translateZ(0px)">
-            <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
-            </svg>
-        </div>
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
-                    <h4 class="text-3xl font-semibold">Follow us on social media</h4>
-                    <h5 class="text-lg mt-0 mb-2 text-gray-700">
-                        Find us on any of these platforms, we respond 1-2 business days.
-                    </h5>
-                    <div class="mt-6">
-                        <button
-                            class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                            type="button">
-                            <i class="flex fab fa-twitter text-orange-500"></i></button><button
-                            class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                            type="button">
-                            <i class="flex fab fa-facebook-square text-orange-500"></i></button><button
-                            class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                            type="button">
-                            <i class="flex fab fa-linkedin text-orange-500"></i>
-                        </button>
-                    </div>
-                </div>
+
+    <!-- FOOTER START -->
+    <div class="footer">
+        <div class="contain">
+            <div class="col" id="politicas">
+                <h1 class="titulo">POLÍTICAS</h1>
+                <ul>
+                    <li><a href="aviso-legal">Aviso Legal</li>
+                    <li><a href="politicas-de-cookies">Política de cookies</li>
+                    <li><a href="politicas-de-privacidad">Política de privacidad</li>
+                </ul>
             </div>
-            <hr class="my-6 border-gray-400" />
-            <div class="flex flex-wrap items-center md:justify-between justify-center">
-                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-                    <div class="text-sm text-gray-600 font-semibold py-1">
-                        Copyright © The Power Room
-                    </div>
-                </div>
+            <div class="col">
+                <h1>DESCUBRE</h1>
+                <ul>
+                    <li><a href="/">Inicio</li>
+                    <li><a href="instalaciones">Instalaciones</li>
+                    <li>Actividades</li>>
+                </ul>
             </div>
+            <div class="col">
+                <h1>CONTACTA</h1>
+                <ul>
+                    <li>649 14 36 97</li>
+                    <li>Calle Falsa nº123</li>
+                    <li>info@perfectbodylucena.com</li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
         </div>
-    </footer>
+    </div>
+    <!-- END OF FOOTER -->
 
 </x-app-layout>

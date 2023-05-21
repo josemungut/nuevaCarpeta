@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\informacionlandingpage;
-use App\Models\landing;
+use App\Models\sala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class LandingController extends Controller
+
+class salaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +16,8 @@ class LandingController extends Controller
      */
     public function index()
     {
-        $clase = informacionlandingpage::all();
-        $url = 'storage/';
-        return view('landing')->with('hola', $clase)->with('url', $url);
-
-    }
+        $clase = DB::table('clases')->get();
+        return view('sala.index')->with('clases', $clase);    }
 
     /**
      * Show the form for creating a new resource.
@@ -50,7 +48,9 @@ class LandingController extends Controller
      */
     public function show($id)
     {
-        //
+        $bucarId = sala::findOrFail($id);
+            $url = 'storage/';
+            return view('sala.show')->with('profesores', $bucarId)->with('url', $url);
     }
 
     /**

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
+            $table->date('imagen');
             $table->string('nombre', 50);
             $table->foreignId('id_tipo_actividad')->constrained('tipo_actividad');
             $table->foreignId('id_sala')->constrained('sala');

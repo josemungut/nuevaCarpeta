@@ -20,9 +20,7 @@
         color: black;
     }
 
-    #navLink {
-
-    }
+    #navLink {}
 
     .añadir {
         padding-right: 30%;
@@ -40,9 +38,7 @@
         margin-left: 80px;
     }
 
-    #boton {
-
-    }
+    #boton {}
 
     #titulo2 {
         color: blue;
@@ -73,21 +69,14 @@
                         <x-nav-link :href="route('actividades')" :active="request()->routeIs('actividades')" class="añadir">
                             <b>{{ __('Actividades') }}</b>
                         </x-nav-link>
-                        <x-nav-link :href="route('instalaciones')" :active="request()->routeIs('instalaciones')" class="añadir">
+                        <x-nav-link :href="route('instalaciones.index')" :active="request()->routeIs('instalaciones.index')" class="añadir">
                             <b>{{ __('Instalaciones') }}</b>
                         </x-nav-link>
                         @if (Auth::user()->tipo == 'admin')
-                            <x-nav-link :href="route('clase.create')" :active="request()->routeIs('clase.create')" class="añadir">
+                            <x-nav-link :href="route('actividades')" :active="request()->routeIs('actividades')" class="añadir">
                                 <b>{{ __('Añadir clase') }}</b>
                             </x-nav-link>
-                            <x-nav-link :href="route('cliente.index')" :active="request()->routeIs('cliente.index')" class="añadir">
-                                <b>{{ __('Clientes') }}</b>
-                            </x-nav-link>
-                            <x-nav-link :href="route('realiza.index')" :active="request()->routeIs('realiza.index')" class="añadir">
-                                <b>{{ __('Reservas') }}</b>
-                            </x-nav-link>
                         @endif
-
                     </div>
                 </div>
             @endauth

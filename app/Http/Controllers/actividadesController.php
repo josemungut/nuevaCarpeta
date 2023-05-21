@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\informacionlandingpage;
-use App\Models\landing;
+use App\Models\actividades;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
-class LandingController extends Controller
+class actividadesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class LandingController extends Controller
      */
     public function index()
     {
-        $clase = informacionlandingpage::all();
-        $url = 'storage/';
-        return view('landing')->with('hola', $clase)->with('url', $url);
-
+        //
     }
 
     /**
@@ -28,7 +25,11 @@ class LandingController extends Controller
      */
     public function create()
     {
-        //
+        try {
+            return view('actividades.create');
+        } catch (QueryException $ex) {
+            echo $ex;
+        }
     }
 
     /**
@@ -39,7 +40,19 @@ class LandingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $clase = new actividades();
+            $clase->nombre = $request->nombre;
+            $clase->fecha_inicio = $request->fecha_inicio;
+            $clase->fecha_fin = $request->fecha_fin;
+            $nombrefoto = time() . "-" . $request->file('imagen')->getClientOriginalName();
+            $clase->imagen = $nombrefoto;
+            $clase->saveOrFail();
+            $request->file('imagen')->storeAs('/public/', $nombrefoto);
+            return redirect()->route('actividades.index')->with('status', "participante introducido");
+        } catch (QueryException $ex) {
+            echo $ex;
+        }
     }
 
     /**

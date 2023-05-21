@@ -1,7 +1,8 @@
 <x-app-layout>
+
     <style>
         .banner {
-            background-color: orange;
+            background-color: #f2f2f2;
             padding: 20px;
             text-align: center;
         }
@@ -15,8 +16,13 @@
             font-size: 16px;
             color: #666;
         }
-         /* REMOVE THIS, USE YOUR OWN  */
-         html,
+
+        #imagen {
+            max-width: 350px;
+        }
+
+        /* REMOVE THIS, USE YOUR OWN  */
+        html,
         body {
             margin: 0;
             padding: 0;
@@ -159,20 +165,40 @@
         }
     </style>
 
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>
-
     <body>
+
         <div class="banner">
-            <h1>Bienvenido a Perfect Body Lucena</h1>
-            <p>¡Donde tu salud, nos importa!</p>
+            <h1>Bienvenido al sitio web</h1>
+            <p>¡Descubre nuestras últimas ofertas!</p>
+        </div>
+
+        <div class="py-12">
+            <div id="container">
+                <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15 bg-white border-b border-gray-200" id="card">
+                    @foreach ($hola as $profesor)
+                        <div
+                            class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div class="p-5">
+
+                                <img id="imagen" src="{{ asset($url . $profesor->imagen) }}">
+
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    {{ $profesor->nombre }}</h5>
+
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    {{ $profesor->descripcion }}
+                                </p>
+                                <a href={{ route('instalaciones.show', ['instalacione' => $profesor->id]) }}>
+                                    <button type="button"
+                                        class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Ver
+                                        con mas detalle</button></a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </body>
-    </html>
 
     <div class="footer">
         <div class="contain">
