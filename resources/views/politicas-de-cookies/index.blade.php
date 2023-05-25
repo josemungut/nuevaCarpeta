@@ -261,9 +261,7 @@
     con un nivel de protección acorde a la normativa europea. Si deseas información sobre el uso que Google da a las
     cookies te adjuntamos este enlace
 </p>
-<html>
 
-<body>
     <div class="footer">
         <div class="contain">
             <div class="col" id="politicas">
@@ -294,5 +292,3 @@
             <div class="clearfix"></div>
         </div>
     </div>
-</body>
-</html>

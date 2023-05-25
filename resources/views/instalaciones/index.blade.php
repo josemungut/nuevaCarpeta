@@ -33,7 +33,7 @@
         .dummy_page {
             height: 200px;
             width: 100%;
-            background-color: #f0f0f0;
+            background-color: black ;
             text-align: center;
             box-sizing: border-box;
             padding: 60px 0px;
@@ -44,7 +44,7 @@
             width: 100%;
             position: relative;
             height: auto;
-            background-color: #070617;
+            background-color: black;
         }
 
         .footer .col {
@@ -163,29 +163,32 @@
         #politicas {
             margin-left: 300px !important;
         }
+        #tarjeta{
+            margin-top: 15px !important;
+        }
     </style>
 
     <body>
 
-        <div class="banner">
-            <h1>Bienvenido al sitio web</h1>
+        <div class="banner" style="background-color: white">
+            <h1 style="color: orange">Bienvenido al sitio web</h1>
             <p>¡Descubre nuestras últimas ofertas!</p>
         </div>
 
-        <div class="py-12">
-            <div id="container">
-                <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15 bg-white border-b border-gray-200" id="card">
+        <div class="py-12" style="background-color: white" id="tarjeta">
+            <div id="container" style="background-color: white" >
+                <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15" style="background-color: white" >
                     @foreach ($hola as $profesor)
                         <div
-                            class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <div class="p-5">
+                            class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="background-color: black" id="tarjeta">
+                            <div class="p-5" >
 
                                 <img id="imagen" src="{{ asset($url . $profesor->imagen) }}">
 
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" style="color: white">
                                     {{ $profesor->nombre }}</h5>
 
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" style="color: white">
                                     {{ $profesor->descripcion }}
                                 </p>
                                 <a href={{ route('instalaciones.show', ['instalacione' => $profesor->id]) }}>
@@ -231,3 +234,7 @@
         </div>
     </div>
 </x-app-layout>
+
+
+
+

@@ -29,7 +29,9 @@ class instalacionesController extends Controller
      */
     public function create()
     {
-        //
+        $clase= instalaciones::all();
+            return view('instalaciones.create')->with('instalaciones',$clase);
+
     }
 
     /**
@@ -40,7 +42,15 @@ class instalacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $clase = new instalaciones();
+        $clase->nombre = $request->nombre;
+        $clase->descripcion = $request->descripcion;
+        $clase->descripcion_corta = $request->descripcion_corta;
+        $nombrefoto = time() . "-" . $request->file('imagen')->getClientOriginalName();
+        $clase->imagen = $nombrefoto;
+        $clase->saveOrFail();
+        $request->file('imagen')->storeAs('/public/', $nombrefoto);
+        return redirect()->route('instalaciones.index')->with('status', "participante introducido");
     }
 
     /**

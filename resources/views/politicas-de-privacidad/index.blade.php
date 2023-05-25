@@ -1,5 +1,13 @@
 <style>
-    .titulo1 {
+    .titulo {
+            color: orange !important;
+        }
+
+        #politicas {
+            margin-left: 300px !important;
+        }
+
+        .titulo1 {
         margin-left: 700px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
         font-size: 40px;

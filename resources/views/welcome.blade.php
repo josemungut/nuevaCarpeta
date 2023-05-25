@@ -153,11 +153,9 @@
             color: orange !important;
         }
 
-        #politicas{
+        #politicas {
             margin-left: 300px !important;
         }
-
-
     </style>
     <!-- Navbar -->
     <script src="{{ asset('./resoruce/js/prueba.js') }}"></script>
@@ -409,7 +407,39 @@
             </div>
         </section>-->
 
+        <div class="boton_whatsapp">
+            <a href="https://wa.me/649143697"><img
+                    src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
+        </div>
+        <style>
+            .boton_whatsapp {
+                transition-duration: 0.2s;
+                transform: scale(1);
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                border-style: solid;
+                border-radius: 50%;
+                border-color: #000000;
+                border-width: 1px;
+                margin: 13px;
+                z-index: 999;
+                background-color: #FFFFFF;
+            }
 
+            .boton_whatsapp:hover {
+                transition-duration: 0.2s;
+                transform: scale(0.9);
+            }
+
+            .boton_whatsapp img {
+                width: 55px;
+                height: 55px;
+                padding: 10px;
+                text-align: center;
+                vertical-align: middle;
+            }
+        </style>
     </main>
 
 

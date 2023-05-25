@@ -63,7 +63,7 @@
                 <div class="class">
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" id="navLink" id="nav">
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="añadir">
+                        <x-nav-link :href="route('landing.index')" :active="request()->routeIs('landing.index')" class="añadir">
                             <b>{{ __('Inicio') }}</b>
                         </x-nav-link>
                         <x-nav-link :href="route('actividades.index')" :active="request()->routeIs('actividades.index')" class="añadir">
@@ -74,7 +74,10 @@
                         </x-nav-link>
                         @if (Auth::user()->tipo == 'admin')
                             <x-nav-link :href="route('actividades.create')" :active="request()->routeIs('actividades.create ')" class="añadir">
-                                <b>{{ __('Añadir clase') }}</b>
+                                <b>{{ __('Añadir actividades') }}</b>
+                            </x-nav-link>
+                            <x-nav-link :href="route('instalaciones.create')" :active="request()->routeIs('instalaciones.create ')" class="añadir">
+                                <b>{{ __('Añadir instalaciones') }}</b>
                             </x-nav-link>
                         @endif
                     </div>

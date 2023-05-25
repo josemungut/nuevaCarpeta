@@ -1,534 +1,637 @@
-<style>
-    .titulo {
-        margin-top: 50px;
-        margin-left: 750px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 20px;
-    }
+<x-app-layout>
 
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
 
-    @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
-
-    :root {
-        --primary: #094b65;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-        overflow-x: hidden;
-        background: #fff;
-        min-height: 100vh;
-    }
-
-    #header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 30px 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 100;
-    }
-
-    #header .logo {
-        color: var(--primary);
-        font-weight: 700;
-        font-size: 2em;
-        text-decoration: none;
-    }
-
-    #header ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #header ul li {
-        list-style: none;
-        margin-left: 20px;
-    }
-
-    #header ul li a {
-        text-decoration: none;
-        padding: 6px 15px;
-        color: var(--primary);
-        border-radius: 20px;
-    }
-
-    #header ul li a:hover,
-    #header ul li a.active {
-        background: var(--primary);
-        color: #fff;
-    }
-
-    section {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    section::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(to top, var(--primary), transparent);
-        z-index: 10;
-    }
-
-    section img {
-        position: absolute;
-        top: 0px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        pointer-events: none;
-    }
-
-    section #text {
-        position: absolute;
-        color: var(--primary);
-        font-size: 10vw;
-        text-align: center;
-        line-height: .55em;
-        font-family: 'Rancho', cursive;
-        transform: translatey(-50%);
-    }
-
-    section #text span {
-        font-size: .20em;
-        letter-spacing: 2px;
-        font-weight: 400;
-    }
-
-    #btn {
-        text-decoration: none;
-        display: inline-block;
-        padding: 8px 30px;
-        background: #fff;
-        color: var(--primary);
-        font-size: 1.2em;
-        font-weight: 500;
-        letter-spacing: 2px;
-        border-radius: 40px;
-        transform: translatey(100px);
-    }
-
-    .sec {
-        position: relative;
-        padding: 100px;
-        background: var(--primary);
-    }
-
-    .sec h2 {
-        font-size: 3.5em;
-        color: #fff;
-        margin-bottom: 10px;
-    }
-
-    .sec p {
-        font-size: 1em;
-        color: #fff;
-    }
-
-    footer {
-        position: relative;
-        padding: 0px 100px;
-        background: var(--primary);
-    }
-
-    footer a {
-        text-decoration: none;
-        color: #fff;
-    }
-
-
-
-
-    * {
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        font-family: 'Montserrat';
-        font-weight: normal;
-        color: #444;
-        text-align: center;
-        margin: 2rem 0;
-    }
-
-    .wrapper {
-        width: 90%;
-        margin: 0 auto;
-        max-width: 80rem;
-    }
-
-    .cols {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-
-    .col {
-        width: calc(25% - 2rem);
-        margin: 1rem;
-        cursor: pointer;
-    }
-
-    .container {
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-perspective: 1000px;
-        perspective: 1000px;
-    }
-
-    .front,
-    .back {
-        background-size: cover;
-        box-shadow: 0 4px 8px 0;
-        border-radius: 10px;
-        background-position: center;
-        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        text-align: center;
-        min-height: 280px;
-        height: auto;
-        border-radius: 10px;
-        color: #fff;
-        font-size: 1.5rem;
-    }
-
-    .back {
-        background: #cedce7;
-        background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
-        background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
-        background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
-    }
-
-    .front:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        content: '';
-        display: block;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 10px;
-    }
-
-    .container:hover .front,
-    .container:hover .back {
-        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    }
-
-    .back {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-
-    .inner {
-        -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-        transform: translateY(-50%) translateZ(60px) scale(0.94);
-        top: 50%;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        padding: 2rem;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        outline: 1px solid transparent;
-        -webkit-perspective: inherit;
-        perspective: inherit;
-        z-index: 2;
-    }
-
-    .container .back {
-        -webkit-transform: rotateY(180deg);
-        transform: rotateY(180deg);
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-    }
-
-    .container .front {
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-    }
-
-    .container:hover .back {
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-    }
-
-    .container:hover .front {
-        -webkit-transform: rotateY(-180deg);
-        transform: rotateY(-180deg);
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-    }
-
-    .front .inner p {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        position: relative;
-    }
-
-    .front .inner p:after {
-        content: '';
-        width: 4rem;
-        height: 2px;
-        position: absolute;
-        background: #C6D4DF;
-        display: block;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        bottom: -.75rem;
-    }
-
-    .front .inner span {
-        color: rgba(255, 255, 255, 0.7);
-        font-family: 'Montserrat';
-        font-weight: 300;
-    }
-
-    @media screen and (max-width: 64rem) {
-        .col {
-            width: calc(33.333333% - 2rem);
         }
-    }
 
-    @media screen and (max-width: 48rem) {
-        .col {
-            width: calc(50% - 2rem);
+        .row {
+            max-width: 1140px;
+            margin: 0 auto;
         }
-    }
 
-    @media screen and (max-width: 32rem) {
-        .col {
+
+        body {
+
+            font-family: tahoma;
+
+
+        }
+
+        .hero {
+            position: absolute;
+            width: 1140px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://bg.mealtrip.com/00_upbank/bb_fblogb_img_rs/2017/aID35/pam-smith-salmon-0928-15-008.jpg");
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .main-nav {
+            list-style: none;
+            float: right;
+            margin-top: 60px;
+        }
+
+        .main-nav li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .main-nav li a {
+            color: white;
+            text-decoration: none;
+            font-size: 90%;
+            font-weight: bold;
+        }
+
+        .main-nav li a:hover {
+            color: #e67e22;
+            border-bottom: 2px solid #e67e22;
+            transition: all 0.5s ease-in;
+            padding: 15px 0;
+
+        }
+
+        .logo img {
+            height: 100px;
+            float: left;
+            margin-top: 30px;
+
+        }
+
+
+        .btn {
+            border: 1px solid #e67e22;
+            padding: 10px 30px;
+            color: #e67e22;
+            text-decoration: none;
+            border-radius: 12px;
+            margin-right: 15px;
+        }
+
+        .button-awesome {
+            margin-top: 40px;
+        }
+
+        .btn-half:hover {
+            background-color: #e67e22;
+            color: white;
+            transition: all 0.5s ease-in;
+        }
+
+        .btn-full:hover {
+            background-color: #e67e22;
+            color: white;
+            transition: all 0.5s ease-in;
+        }
+
+        .copy {
+            width: 70%;
+            margin-left: 15%;
+            margin-bottom: 20px;
+        }
+
+        h3:after {
+            width: 100px;
+            height: 2px;
+            background-color: #e67e22;
+            display: block;
+            content: " ";
+            margin: 0 auto;
+            margin-top: 30px;
+
+        }
+
+        .features h3 {
+            margin-top: 50px;
+            margin-bottom: 30px;
+
+
+        }
+
+        .arranging {
+            text-align: justify;
+        }
+
+        .features i {
+            font-size: 40px;
+            color: #e67e22;
+            margin-left: 40%;
+            margin-bottom: 20px;
+        }
+
+        .features h4 {
+            margin-left: 55px;
+        }
+
+        .meal-showcase {
+            list-style: none;
             width: 100%;
-            margin: 0 0 2rem 0;
         }
-    }
-</style>
 
-<head>
-</head>
+        .meal-showcase li {
+            display: block;
+            width: 25%;
+            float: left;
+        }
 
-<body>
-    <!--<header id="header">
-        <a href="#" class="logo">Forest</a>
-        <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Destination</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </header>-->
+        .meal-photo {
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
 
-    <Section>
-        <h2 id="text"><span></span><br>PERFECT BODY <br><br> LUCENA</h2>
+        .meal-photo img {
+            width: 100%;
+            height: auto;
+            transform: scale(1.15);
+            transition: all 0.5s;
 
-        <img src="https://user-images.githubusercontent.com/65358991/170092504-132fa547-5ced-40e5-ab64-ded61518fac2.png"
-            id="bird1">
-        <img src="https://user-images.githubusercontent.com/65358991/170092542-9747edcc-fb51-4e21-aaf5-a61119393618.png"
-            id="bird2">
-        <img src="https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png"
-            id="forest">
 
-        <a href="#" id="btn">Explore</a>
+        }
 
-        <img src="https://user-images.githubusercontent.com/65358991/170092605-eada6510-d556-45cc-b7fa-9e4d1d258d26.png"
-            id="rocks">
-        <img src="https://user-images.githubusercontent.com/65358991/170092616-5a70c4af-2eed-496f-bde9-b5fcc7142a31.png"
-            id="water">
-    </Section>
+        .meal-photo img:hover {
+            transform: scale(1.05);
+        }
 
-    <div class="sec">
-        <div class="wrapper">
-            <div class="cols">
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
-                            @foreach ($hola as $profesor)
-                                    <div
-                                        class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                                        <div class="p-5">
-                                            <a href="#">
-                                                <h5
-                                                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                                    {{ $profesor->nombre }}</h5>
-                                            </a>
-                                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                                {{ $profesor->apellidos }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                @endforeach
-                        </div>
+        .meal {
+            margin-top: 80px;
+        }
+
+        .pic img {
+            width: 80%;
+            margin-left: 20%;
+            margin-top: 80px;
+        }
+
+        .works-step {
+            margin-top: 50px;
+        }
+
+        .works-step div {
+            border: 1px solid #e67e22;
+            display: inline-block;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .works-step img {
+            height: 40px;
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+
+        .clear-fix {
+            zoom: 1;
+        }
+
+        .clear-fix:after {
+            visibility: hidden;
+            content: ".";
+            height: 0;
+            display: block;
+            clear: both;
+        }
+
+        .mobile {
+            margin-top: 60px;
+        }
+
+        .cities {
+            margin-top: 100px;
+        }
+
+        .cities img {
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        .cities i {
+            color: #e67e22;
+        }
+
+        .testimonials {
+            margin-top: 80px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.contentful.com/lufu0clouua1/2C9nEg49acWyc4W8I4QkYm/54eab24194bc714b1863c5ce09abc3fd/PLATTER_WEB__fresh-fruit_6899_V2_rfc.jpg");
+            padding-top: 80px;
+            padding-bottom: 80px;
+            color: white;
+            background-attachment: fixed;
+
+        }
+
+        .testimonials p {
+            color: white;
+            line-height: 25px;
+            text-align: justify;
+            margin-top: 40px;
+        }
+
+        .testimonials cite img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .btn-block {
+            background-color: #e67e22;
+            color: #fff;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        .gap {
+            margin-top: 40px;
+        }
+
+        .form {
+            margin-top: 40px;
+        }
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, Sans-serif;
+            background-color: #070617;
+        }
+
+        .dummy_page {
+            height: 200px;
+            width: 100%;
+            background-color: #f0f0f0;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 60px 0px;
+        }
+
+        /* STYLES SPECIFIC TO FOOTER  */
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: #070617;
+        }
+
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+    </style>
+
+
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+            integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Healthy Eating and Living</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="row">
+                <div class="hero">
+                    <h1> GOODBYE JUNK FOOD <br> HELLO HEALTHY FOOD </h1>
+                    <div class="button-awesome">
+                        <a href=""class="btn btn-half">Show me more</a>
+                        <a href=""class="btn btn-full">I'm hungry</a>
                     </div>
-                </div>
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="url(https://unsplash.it/511/511/)">
-                            <div class="inner">
-                                <p>Rocogged</p>
-                                <span>Lorem ipsum</span>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                    velit quae suscipit c.</p>
-                            </div>
-                        </div>
+        </header>
+
+        <section class="features">
+            <h3 class="text-center"> GET FOOD FAST NOT FAST FOOD <br> PLAN HEALTHY MEALS </h3>
+            <p class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Non blandit massa enim nec dui nunc mattis enim ut. Turpis in eu mi
+                bibendum neque egestas congue quisque. Vivamus at augue eget arcu dictum varius.</p>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <i class="fa fa-certificate"></i>
+
+                        <h4>Reward Success</h4>
+
+                        <p class="arranging">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec dui nunc
+                            mattis enim ut. Turpis in eu mi bibendum neque egestas congue quisque. Vivamus at augue eget
+                            arcu dictum varius.</p>
                     </div>
-                </div>
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
-                            <div class="inner">
-                                <p>Strizzes</p>
-                                <span>Lorem ipsum</span>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                    velit quae suscipit c.</p>
-                            </div>
-                        </div>
+
+                    <div class="col-md-3">
+                        <i class="fa fa-camera"></i>
+
+                        <h4>Take Photos</h4>
+
+                        <p class-"arranging">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec dui nunc
+                            mattis enim ut. Turpis in eu mi bibendum neque egestas congue quisque. Vivamus at augue eget
+                            arcu dictum varius. </p>
                     </div>
-                </div>
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="background-image: url(https://unsplash.it/503/503/)">
-                            <div class="inner">
-                                <p>Clossyo</p>
-                                <span>Lorem ipsum</span>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                    velit quae suscipit c.</p>
-                            </div>
-                        </div>
+
+                    <div class="col-md-3">
+                        <i class="fa fa-envelope"></i>
+
+                        <h4>Be Social</h4>
+
+                        <p class="arranging">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec dui nunc
+                            mattis enim ut. Turpis in eu mi bibendum neque egestas congue quisque. Vivamus at augue eget
+                            arcu dictum varius. </p>
                     </div>
-                </div>
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="background-image: url(https://unsplash.it/504/504/">
-                            <div class="inner">
-                                <p>Rendann</p>
-                                <span>Lorem ipsum</span>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                    velit quae suscipit c.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="background-image: url(https://unsplash.it/505/505/)">
-                            <div class="inner">
-                                <p>Reflupper</p>
-                                <span>Lorem ipsum</span>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                    velit quae suscipit c.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="background-image: url(https://unsplash.it/506/506/)">
-                            <div class="inner">
-                                <p>Acirassi</p>
-                                <span>Lorem ipsum</span>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                    velit quae suscipit c.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                    <div class="container">
-                        <div class="front" style="background-image: url(https://unsplash.it/508/508/)">
-                            <div class="inner">
-                                <p>Sohanidd</p>
-                                <span>Lorem ipsum</span>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat
-                                    velit quae suscipit c.</p>
-                            </div>
-                        </div>
+
+                    <div class="col-md-3">
+                        <i class="fa fa-cog"></i>
+
+                        <h4>Set Goals</h4>
+
+                        <p class="arranging">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec dui nunc
+                            mattis enim ut. Turpis in eu mi bibendum neque egestas congue quisque. Vivamus at augue eget
+                            arcu dictum varius. </p>
+
+
+
                     </div>
                 </div>
             </div>
+
+        </section>
+
+        <section class="meal">
+            <ul class="meal-showcase clear-fix">
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="http://lorempixel.com/200/200/food/">
+                    </figure>
+                </li>
+
+
+            </ul>
+        </section>
+
+
+
+
+        <section class="testimonials">
+            <h3 class="text-center">OUR CUSTOMERS CAN'T LIVE WITHOUT US</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+
+
+                        <p>
+                            <!--The best preparation for tomorrow is doing your best today.<br>
+                H. Jackson Brown, Jr. <br>-->
+                            The meal plan resulted in a 12 lb weight loss for me.
+                            That was a terrific result, but more than that it took care of skin problems I
+                            didn't realize were allergic reactions to food. Another healthy change was I feel
+                            more mentally alert- being a full time student I need all of the focus I can get!
+
+                        </p>
+
+
+                        <cite><img src="http://lorempixel.com/50/50/people/"> Chris P. Bacon</cite>
+
+
+
+                    </div>
+
+                    <div class="col-md-4">
+
+
+                        <p>
+
+                            Loved the meal plan, it really educated me on the importance
+                            of organic foods, and baking clean. I feel 100% better day to day, and have way more energy.
+                            I would tell anyone who struggles with weight, energy or even just poor diet just how much
+                            this program has motivated me
+
+
+                        </p>
+
+
+                        <cite><img src="http://lorempixel.com/50/50/people/"> Eden Ham</cite>
+
+
+
+                    </div>
+
+                    <div class="col-md-4">
+
+
+                        <p>
+
+                            Enjoyed the team support, it definitely helped me to acheive my goals.
+                            I lost 20 lbs. total, 3 inches off
+                            my belly and 2.5 inches off my waist! I feel great.
+
+                        </p>
+
+
+                        <cite><img src="http://lorempixel.com/50/50/people/"> Al Dente</cite>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="footer">
+            <div class="contain">
+                <div class="col" id="politicas">
+                    <h1 class="titulo">POLÍTICAS</h1>
+                    <ul>
+                        <li><a href="aviso-legal">Aviso Legal</li>
+                        <li><a href="politicas-de-cookies">Política de cookies</li>
+                        <li><a href="politicas-de-privacidad">Política de privacidad</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1 class="titulo">DESCUBRE</h1>
+                    <ul>
+                        <li><a href="/">Inicio</li>
+                        <li><a href="instalaciones">Instalaciones</li>
+                        <li>Actividades</li>>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1 class="titulo">CONTACTA</h1>
+                    <ul>
+                        <li>649 14 36 97</li>
+                        <li>Calle Falsa nº123</li>
+                        <li>info@perfectbodylucena.com</li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
         </div>
-    </div>
+    </body>
 
-    <footer>
-        <a href="http://www.freepik.com">Forest Graphics Designed by brgfx / Freepik</a>
-    </footer>
-
-
-
-</body>
+    </html>
+</x-app-layout>

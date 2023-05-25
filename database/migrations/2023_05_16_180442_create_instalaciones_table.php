@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('instalaciones', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('descripcion',500);
             $table->string('descripcion_corta');
             $table->string('imagen');
             $table->timestamps();

@@ -69,14 +69,10 @@ Route::get('aviso-legal', function () {
 // })->name('instalaciones');
 
 
-Route::get('landing', function () {
-    $profesores = informacionlandingpage::all();
-    $url = 'storage/';
-    return view('landing')->with('hola', $profesores)->with('url', $url);;
-});
 
 Route::resource('instalaciones', instalacionesController::class)->middleware(['auth','verified']);
 Route::resource('actividades', actividadesController::class)->middleware(['auth','verified']);
+Route::resource('landing', landingcontroller::class)->middleware(['auth','verified']);
 
 
 require __DIR__ . '/auth.php';

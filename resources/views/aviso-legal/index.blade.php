@@ -163,6 +163,27 @@
         #politicas {
             margin-left: 300px !important;
         }
+
+        .titulo1 {
+        margin-left: 700px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        font-size: 40px;
+    }
+
+    .titulo {
+        margin-left: 100px;
+        margin-right: 100px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        font-size: 30px;
+
+    }
+
+    .titulo2 {
+        margin-left: 100px;
+        margin-right: 100px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 20px;
+    }
     </style>
 
 
@@ -437,36 +458,5 @@
         </div>
     </div>
 
-    <body>
-        <div class="footer">
-            <div class="contain">
-                <div class="col" id="politicas">
-                    <h1 class="titulo">POLÍTICAS</h1>
-                    <ul>
-                        <li><a href="aviso-legal">Aviso Legal</li>
-                        <li><a href="politicas-de-cookies">Política de cookies</li>
-                        <li><a href="politicas-de-privacidad">Política de privacidad</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h1 class="titulo">DESCUBRE</h1>
-                    <ul>
-                        <li><a href="/">Inicio</li>
-                        <li><a href="instalaciones">Instalaciones</li>
-                        <li>Actividades</li>>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h1 class="titulo">CONTACTA</h1>
-                    <ul>
-                        <li>649 14 36 97</li>
-                        <li>Calle Falsa nº123</li>
-                        <li>info@perfectbodylucena.com</li>
-                    </ul>
-                </div>
 
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </body>
 </x-app-layout>

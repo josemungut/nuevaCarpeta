@@ -1,117 +1,624 @@
 <x-app-layout>
-<style>
-@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+    <style>
+        .banner {
+            background-color: orange;
+            padding: 20px;
+            text-align: center;
+        }
 
-/* Override UGG site */
-#main {width: 100%; padding:0;}
-.content-asset p {margin:0 auto;}
-.breadcrumb {display:none;}
+        .banner h1 {
+            font-size: 24px;
+            color: #333;
+        }
 
-/* Helpers */
-/**************************/
-.margin-top-10 {padding-top:10px;}
-.margin-bot-10 {padding-bottom:10px;}
+        .banner p {
+            font-size: 16px;
+            color: #666;
+        }
 
-/* Typography */
-/**************************/
-#parallax-world-of-ugg h1 {font-family:'Oswald', sans-serif; font-size:24px; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;}
-#parallax-world-of-ugg h2 {font-family:'Oswald', sans-serif; font-size:70px; letter-spacing:10px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.9;}
-#parallax-world-of-ugg h3 {font-family:'Oswald', sans-serif; font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;}
-#parallax-world-of-ugg p {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:14px; line-height:24px;}
-.first-character {font-weight:400; float: left; font-size: 84px; line-height: 64px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Source Sans Pro', sans-serif;}
+        /* REMOVE THIS, USE YOUR OWN  */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, Sans-serif;
+            background-color: black;
+        }
 
-.sc {color: #3b8595;}
-.ny {color: #3d3c3a;}
-.atw {color: #c48660;}
+        .dummy_page {
+            height: 200px;
+            width: 100%;
+            background-color: #f0f0f0;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 60px 0px;
+        }
 
-/* Section - Title */
-/**************************/
-#parallax-world-of-ugg .title {background: white; padding: 60px; margin:0 auto; text-align:center;}
-#parallax-world-of-ugg .title h1 {font-size:35px; letter-spacing:8px;}
+        /* STYLES SPECIFIC TO FOOTER  */
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: black;
+        }
 
-/* Section - Block */
-/**************************/
-#parallax-world-of-ugg .block {background: white; padding: 60px; width:820px; margin:0 auto; text-align:justify;}
-#parallax-world-of-ugg .block-gray {background: #f2f2f2;padding: 60px;}
-#parallax-world-of-ugg .section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
 
-/* Section - Parallax */
-/**************************/
-#parallax-world-of-ugg .parallax-one {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1415018255745-0ec3f7aee47b?dpr=1&auto=format&fit=crop&w=1500&h=938&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
-#parallax-world-of-ugg .parallax-two {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1432163230927-a32e4fd5a326?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
-#parallax-world-of-ugg .parallax-three {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1440688807730-73e4e2169fb8?dpr=1&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
 
-/* Extras */
-/**************************/
-#parallax-world-of-ugg .line-break {border-bottom:1px solid black; width: 150px; margin:0 auto;}
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Media Queries */
-/**************************/
-@media screen and (max-width: 959px) and (min-width: 768px) {
-  #parallax-world-of-ugg .block {padding: 40px; width:620px;}
-}
-@media screen and (max-width: 767px) {
-  #parallax-world-of-ugg .block {padding: 30px; width:420px;}
-  #parallax-world-of-ugg h2 {font-size:30px;}
-  #parallax-world-of-ugg .block {padding: 30px;}
-  #parallax-world-of-ugg .parallax-one, #parallax-world-of-ugg .parallax-two, #parallax-world-of-ugg .parallax-three {padding-top:100px; padding-bottom:100px;}
-}
-@media screen and (max-width: 479px) {
-  #parallax-world-of-ugg .block {padding: 30px 15px; width:290px;}
-}
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+
+        .titulo {
+            color: orange !important;
+        }
+
+        #politicas {
+            margin-left: 300px !important;
+        }
+
+        /*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+        /* Text meant only for screen readers */
+        .screen-reader-text {
+            clip: rect(1px, 1px, 1px, 1px);
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+
+        .screen-reader-text:hover,
+        .screen-reader-text:active,
+        .screen-reader-text:focus {
+            background-color: #f1f1f1;
+            border-radius: 3px;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            clip: auto !important;
+            color: #21759b;
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            height: auto;
+            left: 5px;
+            line-height: normal;
+            padding: 15px 23px 14px;
+            text-decoration: none;
+            top: 5px;
+            width: auto;
+            z-index: 100000;
+            /* Above WP toolbar */
+        }
+
+        /*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+        body {
+            margin: 0;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 100%;
+            font-size: 1.2em;
+        }
+
+        img {
+            display: block;
+            border: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        code {
+            font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+            font-weight: bold;
+        }
+
+        /* Header */
+
+        .masthead {
+            text-align: center;
+            border-bottom: 1px solid hsl(0, 0%, 90%);
+        }
+
+        .intro {
+            margin: 0 auto;
+            padding: 1em 1em 2em;
+            max-width: 50em;
+            font-size: 90%;
+            text-align: left;
+            line-height: 1.4em;
+            columns: 2;
+            column-gap: 2em;
+        }
+
+        .intro p {
+            margin: 0 0 1em;
+        }
+
+        /* Colophon section */
+        .colophon {
+            padding: 2em;
+            background: hsl(0, 0%, 10%);
+            color: white;
+            font-size: 90%;
+            text-align: center;
+            line-height: 1.8em;
+        }
+
+        .colophon a {
+            color: white;
+        }
+
+        .colophon a:hover,
+        .colophon a:focus {
+            border-bottom: 1px solid white;
+        }
+
+        /*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+        .cards {
+            max-width: 25em;
+            margin: 1em auto;
+            padding: 0;
+            list-style-type: none;
+
+        }
+
+        .cards a {
+            display: block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+
+        .caption {
+            padding: 1em;
+            font-size: 90%;
+            color: black;
+        }
+
+        .caption-title {
+            margin: 0;
+            font-size: 1.4em;
+            line-height: 1em;
+        }
+
+        .location {
+            padding: .5em 0;
+            color: hsl(0, 0%, 40%);
+        }
+
+        .caption p {
+            margin-top: .5em;
+            margin-bottom: 0;
+            line-height: 1.3em;
+        }
+
+        .cards a:focus .caption,
+        .cards a:hover .caption {
+            background: hsl(0, 0%, 97%);
+        }
+
+        /*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+        @supports (grid-area: auto) {
+
+            @media screen and (min-width: 27em) {
+
+                .cards {
+                    margin: 0 auto;
+                    padding: 1em;
+                }
+
+                .card-item,
+                .card-item a {
+                    display: flex;
+                    align-items: stretch;
+                    width: 100%;
+                }
+
+                .cards a:focus,
+                .cards a:hover {
+                    outline: 1px solid hsl(0, 0%, 80%);
+                }
+
+                .cards a:focus .caption,
+                .cards a:hover .caption {
+                    background: white;
+                }
+
+                .card {
+                    margin: .5em;
+                    display: grid;
+                    grid-template-columns: 8em auto;
+                    overflow: hidden;
+                }
+
+                .card img {
+                    /*       height: 100%;
+      width: auto; */
+                }
+
+                .caption {
+                    background: white;
+                }
+
+            }
+
+            @media screen and (min-width: 62em) {
+
+                .cards {
+                    max-width: none;
+                    margin: 1em 0;
+                    padding: 0 1em;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, 25em);
+                    grid-gap: 1em;
+                    justify-content: center;
+                }
+
+                .double {
+                    grid-row: span 3;
+                }
+
+                .double .card {
+                    display: block;
+                }
+
+                .double img {
+                    height: calc((100% / 3) * 2 + .5em);
+                }
+
+            }
+
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400&display=swap');
+
+            :root {
+                --c1: #f0f8ff;
+                --c2: #303030;
+            }
+
+            body {
+                background:
+                    repeating-linear-gradient(45deg, #fff0 0 1px, aliceblue 0 3px, #fff0 0 4px),
+                    repeating-linear-gradient(-45deg, #fff 0 1px, aliceblue 0 3px, #fff0 0 4px);
+                font-family: 'Roboto Flex', Arial, Helvetica, serif;
+            }
+
+            body *,
+            *:before,
+            *:after {
+                box-sizing: border-box;
+            }
+
+            article {
+                max-width: 65%;
+                margin: 0 auto;
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
+
+            article p {
+                max-width: 90%;
+                margin: 0 auto;
+                padding: .5rem 0;
+                text-align: justify;
+            }
+
+            article>p {
+                text-align: justify;
+                color: var(--c2);
+                text-shadow: 1px 1px 0px #fff6;
+            }
+
+            blockquote {
+                position: relative;
+                padding: 2.5rem 2rem 4rem;
+                margin: 4rem 2rem;
+                font-size: 2rem;
+                color: var(--c2);
+                background: conic-gradient(from 180deg at 100% calc(100% - 1rem), var(--c2) 0 25%, #fff0 0 100%), conic-gradient(from 180deg at 1rem 50%, var(--c2) 0 25%, #fff0 0 100%), conic-gradient(from 0deg at calc(100% - 1rem) 50%, var(--c2) 0 25%, #fff0 0 100%), conic-gradient(from 0deg at 0rem 1rem, var(--c2) 0 25%, #fff0 0 100%);
+            }
+
+            blockquote:before,
+            blockquote:after {
+                content: "";
+                position: absolute;
+                width: 3.5rem;
+                height: 4.5rem;
+                top: 3rem;
+                left: -1rem;
+                transform: rotate(5deg) scale(1.15);
+                background:
+                    radial-gradient(circle at 1.75rem 3rem, var(--c2) 1.5rem, #fff0 calc(1.5rem + 1px)),
+                    radial-gradient(circle at 3.5rem 1.5rem, #fff0 2rem, var(--c2) calc(2rem + 1px) calc(4rem + 1px), #fff0 calc(4rem + 2px));
+                filter: drop-shadow(3.5rem -0.5rem 0px var(--c2));
+                border-radius: 100%;
+            }
+
+            blockquote:after {
+                top: inherit;
+                bottom: 3rem;
+                transform: rotate(195deg) scale(1.15);
+                right: -1rem;
+                left: inherit;
+            }
+
+            blockquote p {
+                font-weight: bold;
+            }
+
+            blockquote p:after {
+                margin-right: 2rem;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: flex-start;
+                content: " ";
+                display: inline-flex;
+                background: #f000;
+                width: 8rem;
+                height: 3rem;
+            }
+
+            blockquote p:first-letter {
+                background: var(--c2);
+                color: var(--c1);
+                padding: 0 0.75rem;
+                margin-top: 0;
+                margin-left: 3.75rem;
+                margin-right: 0.5rem;
+                box-sizing: border-box;
+                font-size: 4rem;
+                float: left;
+            }
+
+            blockquote cite {
+                font-weight: bold;
+                position: absolute;
+                bottom: 2.5rem;
+                background: var(--c2);
+                color: var(--c1);
+                right: 8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            @media only screen and (max-width: 767px) {
+                article {
+                    max-width: 90%;
+                }
+            }
+            #nombre{
+                margin-top: 15px !important;
+            }
+        }
     </style>
 
-<div id="parallax-world-of-ugg">
+    <!DOCTYPE html>
+    <html>
 
-    <section>
-      <div class="title">
-        <h3>Let's do some</h3>
-        <h1>PARALLAX</h1>
-      </div>
-    </section>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
 
-    <section>
-        <div class="parallax-one">
-          <h2>SOUTHERN CALIFORNIA</h2>
+    <body>
+
+        <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 95vh">
+            <div class="absolute top-0 w-full h-full bg-top bg-cover"
+                style="
+       background-image: url('https://images.unsplash.com/photo-1623874514711-0f321325f318?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+">
+                <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
+            </div>
+            <div class="container relative mx-auto" data-aos="fade-in">
+                <div class="items-center flex flex-wrap">
+                    <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                        <div>
+                            <h1 class="text-white font-semibold text-5xl">
+                                Bienvenido al Centro Deportivo <span class="text-orange-500" id="nombre">Perfect Body Lucena</span>
+                            </h1>
+                            <p class="mt-4 text-lg text-gray-300" style="color: orange">
+                                En Perfect Body Lucena, nos apasiona el deporte y estamos comprometidos a brindarte una
+                                experiencia excepcional. Nuestras instalaciones de primer nivel, un equipo dedicado de
+                                profesionales y una amplia gama de actividades te esperan para ayudarte a alcanzar tus
+                                metas de bienestar físico y mental.<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+                style="height: 70px; transform: translateZ(0px)">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div>
         </div>
-    </section>
 
-    <section>
-      <div class="block">
-        <p><span class="first-character sc">I</span>n 1978, Brian Smith landed in Southern California with a bag of sheepskin boots and hope. He fell in love with the sheepskin experience and was convinced the world would one day share this love. The beaches of Southern California had long been an epicenter of a relaxed, casual lifestyle, a lifestyle that Brian felt was a perfect fit for his brand. So he founded the UGG brand, began selling his sheepskin boots and they were an immediate sensation. By the mid 1980's, the UGG brand became a symbol of relaxed southern California culture, gaining momentum through surf shops and other shops up and down the coast of California, from San Diego to Santa Cruz. UGG boots reached beyond the beach, popping up in big cities and small towns all over, and in every level of society. Girls wore their surfer boyfriend's pair of UGG boots like a letterman jacket. When winter came along, UGG boots were in ski shops and were seen in lodges from Mammoth to Aspen.</p>
-        <p class="line-break margin-top-10"></p>
-        <p class="margin-top-10">The UGG brand began to symbolize those who embraced sport and a relaxed, active lifestyle. More than that, an emotional connection and a true feeling of love began to grow for UGG boots, just as Brian had envisioned. People didn't just like wearing UGG boots, they fell in love with them and literally could not take them off. By the end of the 90's, celebrities and those in the fashion world took notice of the UGG brand. A cultural shift occurred as well - people were embracing, and feeling empowered, by living a more casual lifestyle and UGG became one of the symbols of this lifestyle. By 2000, a love that began on the beaches had become an icon of casual style. It was at this time that the love for UGG grew in the east, over the Rockies and in Chicago. In 2000, UGG Sheepskin boots were first featured on Oprah's Favorite Things® and Oprah emphatically declared that she "LOOOOOVES her UGG boots." From that point on, the world began to notice.</p>
-      </div>
-    </section>
+        <article>
 
-    <section>
-      <div class="parallax-two">
-        <h2>NEW YORK</h2>
-      </div>
-    </section>
+            <p>Ya seas un atleta experimentado o estés dando tus primeros pasos en el mundo del deporte, aquí
+                encontrarás todo lo que necesitas. Contamos con modernos espacios para el entrenamiento, equipamiento de
+                última generación y una variedad de programas diseñados para todas las edades y niveles de condición
+                física.</p>
 
-    <section>
-      <div class="block">
-        <p><span class="first-character ny">B</span>reaking into the New York fashion world is no easy task. But by the early 2000's, UGG Australia began to take it by storm. The evolution of UGG from a brand that made sheepskin boots, slippers, clogs and sandals for an active, outdoor lifestyle to a brand that was now being touted as a symbol of a stylish, casual and luxurious lifestyle was swift. Much of this was due to a brand repositioning effort that transformed UGG into a high-end luxury footwear maker. As a fashion brand, UGG advertisements now graced the pages of Vogue Magazine as well as other fashion books. In the mid 2000's, the desire for premium casual fashion was popping up all over the world and UGG was now perfectly aligned with this movement.</p>
-        <p class="line-break margin-top-10"></p>
-        <p class="margin-top-10">Fueled by celebrities from coast to coast wearing UGG boots and slippers on their downtime, an entirely new era of fashion was carved out. As a result, the desire and love for UGG increased as people wanted to go deeper into this relaxed UGG experience. UGG began offering numerous color and style variations on their sheepskin boots and slippers. Cold weather boots for women and men and leather casuals were added with great success. What started as a niche item, UGG sheepskin boots were now a must-have staple in everyone's wardrobe. More UGG collections followed, showcasing everything from knit boots to sneakers to wedges, all the while maintaining that luxurious feel UGG is known for all over the world. UGG products were now seen on runways and in fashion shoots from coast to coast. Before long, the love spread even further.</p>
-      </div>
-    </section>
+            <blockquote>
+                <p>“No ganan siempre los buenos, ganan los que luchan”.</p>
+                <cite>Diego Pablo Simeone</cite>
+            </blockquote>
 
-    <section>
-      <div class="parallax-three">
-        <h2>ENCHANTED FOREST</h2>
-      </div>
-    </section>
+            <p>En nuestro Centro Deportivo, podrás disfrutar de una amplia selección de actividades deportivas. Desde
+                entrenamientos en grupo, como clases de aeróbicos, yoga y pilates, hasta programas individuales de
+                entrenamiento personalizado, nuestro objetivo es brindarte opciones diversificadas para que encuentres
+                la actividad que más te guste y se adapte a tus necesidades.</p>
 
-    <section>
-      <div class="block">
-        <p><span class="first-character atw">W</span>hen the New York fashion community notices your brand, the world soon follows. The widespread love for UGG extended to Europe in the mid-2000's along with the stylish casual movement and demand for premium casual fashion. UGG boots and shoes were now seen walking the streets of London, Paris and Amsterdam with regularity. To meet the rising demand from new fans, UGG opened flagship stores in the UK and an additional location in Moscow. As the love spread farther East, concept stores were opened in Beijing, Shanghai and Tokyo. UGG Australia is now an international brand that is loved by all. This love is a result of a magical combination of the amazing functional benefits of sheepskin and the heightened emotional feeling you get when you slip them on your feet. In short, you just feel better all over when you wear UGG boots, slippers, and shoes.</p>
-        <p class="line-break margin-top-10"></p>
-        <p class="margin-top-10">In 2011, UGG will go back to its roots and focus on bringing the active men that brought the brand to life back with new styles allowing them to love the brand again as well. Partnering with Super Bowl champion and NFL MVP Tom Brady, UGG will invite even more men to feel the love the rest of the world knows so well. UGG will also step into the world of high fashion with UGG Collection. The UGG Collection fuses the timeless craft of Italian shoemaking with the reliable magic of sheepskin, bringing the luxurious feel of UGG to high end fashion. As the love for UGG continues to spread across the world, we have continued to offer new and unexpected ways to experience the brand. The UGG journey continues on and the love for UGG continues to spread.</p>
-      </div>
-    </section>
+            <blockquote>
+                <p> “Si trabajas, los resultados vendrán solos"</p>
+                <cite>Michael Jordan</cite>
+            </blockquote>
 
+            <p>Además de nuestras instalaciones de vanguardia, también ofrecemos servicios complementarios para mejorar
+                tu experiencia. Contamos con áreas de relajación, servicios de masajes y tratamientos de spa, todo
+                diseñado para ayudarte a recuperarte y revitalizarte después de tus sesiones de entrenamiento.</p>
+
+            <p>Nuestro equipo de entrenadores altamente cualificados está aquí para guiarte y motivarte en cada paso de
+                tu camino hacia la salud y el bienestar. Ya sea que estés buscando mejorar tu forma física, alcanzar
+                metas específicas o simplemente mantener un estilo de vida activo, ellos estarán encantados de brindarte
+                el apoyo necesario.</p>
+
+            <blockquote>
+                <p>“No importa lo bueno que seas, lo emocionante es que puedes ser todavía mejor.”</p>
+                <cite>Tiger Woods</cite>
+            </blockquote>
+
+            <p>¡En Perfect Body Lucena, tu bienestar es nuestra prioridad! Estamos ansiosos por acompañarte en tu viaje hacia una vida más saludable y activa!</p>
+            <p>¡Nos vemos pronto en el Centro Deportivo Perfect Body Lucena!
+
+
+
+
+            </p>
+        </article>
+
+
+
+
+
+    </body>
+
+    </html>
+
+    <div class="footer">
+        <div class="contain">
+            <div class="col" id="politicas">
+                <h1 class="titulo">POLÍTICAS</h1>
+                <ul>
+                    <li><a href="aviso-legal">Aviso Legal</li>
+                    <li><a href="politicas-de-cookies">Política de cookies</li>
+                    <li><a href="politicas-de-privacidad">Política de privacidad</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1 class="titulo">DESCUBRE</h1>
+                <ul>
+                    <li><a href="/">Inicio</li>
+                    <li><a href="instalaciones">Instalaciones</li>
+                    <li>Actividades</li>>
+                </ul>
+            </div>
+            <div class="col">
+                <h1 class="titulo">CONTACTA</h1>
+                <ul>
+                    <li>649 14 36 97</li>
+                    <li>Calle Falsa nº123</li>
+                    <li>info@perfectbodylucena.com</li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
     </div>
 </x-app-layout>
