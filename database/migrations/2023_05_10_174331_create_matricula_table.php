@@ -15,10 +15,16 @@ return new class extends Migration
     {
         Schema::create('matricula', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('apellidos');
             $table->date('fecha');
-            $table->float('cuota_inicial');
             $table->float('cuota_mensual');
-            $table->foreignId('id_usuario')->constrained('users');
+            $table->integer('telefono');
+            $table->string('email');
+            $table->string('descripcion');
+            $table->string('id_usuario')->constrained('users');
+            $table->SoftDeletes();
+                $table->timestamps();
         });
     }
 

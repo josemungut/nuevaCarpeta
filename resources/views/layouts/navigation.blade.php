@@ -72,13 +72,11 @@
                         <x-nav-link :href="route('instalaciones.index')" :active="request()->routeIs('instalaciones.index')" class="añadir">
                             <b>{{ __('Instalaciones') }}</b>
                         </x-nav-link>
+                        <x-nav-link :href="route('matricula.index')" :active="request()->routeIs('matricula.index')" class="añadir">
+                            <b>{{ __('Matricula') }}</b>
+                        </x-nav-link>
                         @if (Auth::user()->tipo == 'admin')
-                            <x-nav-link :href="route('actividades.create')" :active="request()->routeIs('actividades.create ')" class="añadir">
-                                <b>{{ __('Añadir actividades') }}</b>
-                            </x-nav-link>
-                            <x-nav-link :href="route('instalaciones.create')" :active="request()->routeIs('instalaciones.create ')" class="añadir">
-                                <b>{{ __('Añadir instalaciones') }}</b>
-                            </x-nav-link>
+
                         @endif
                     </div>
                 </div>

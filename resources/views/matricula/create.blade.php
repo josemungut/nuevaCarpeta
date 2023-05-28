@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Añadir clase') }}
+            {{ __('Añadir matricula') }}
         </h2>
     </x-slot>
 
@@ -10,9 +10,8 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                    <form method="POST" action="{{ route('actividades.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('matricula.store') }}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="mb-6">
                             <label for="text"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
@@ -22,63 +21,62 @@
                         </div>
                         <div class="mb-6">
                             <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha
-                                Entrada</label>
-                            <input type="date" name="fecha_inicio" id="fecha_inicio"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="year"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha
-                                Salida</label>
-                            <input type="date" name="fecha_fin" id="fecha_fin"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="imagen"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen</label>
-                            <input type="file" name="imagen" id="imagen"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellidos</label>
+                            <input type="text" name="apellidos" id="apellidos"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required>
                         </div>
                         <div class="mb-6">
                             <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo
-                                Actividad</label>
-                            <select required name="id_tipo_actividad" id="id_tipo_actividad"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                @foreach ($id_tipo_actividad as $id)
-                                    <option></option>
-                                    <option>{{ $id->descripcion }}</option>
-                                @endforeach
-                            </select>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha</label>
+                            <input type="date" name="fecha" id="fecha"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
                         </div>
                         <div class="mb-6">
                             <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">id_sala</label>
-                            <select required name="id_sala" id="id_sala"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                @foreach ($id_sala as $id)
-                                    <option></option>
-                                    <option>{{ $id->descripcion }}</option>
-                                @endforeach
-                            </select>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cuota
+                                Mensual</label>
+                            <input type="text" name="cuota_mensual" id="cuota_mensual"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="number"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Telefono</label>
+                            <input type="number" name="telefono" id="telefono"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
                         </div>
                         <div class="mb-6">
                             <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">id_entrenador</label>
-                            <select required name="id_entrenador" id="id_entrenador"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                @foreach ($id_entrenador as $id)
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                            <input type="text" name="email" id="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="text"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripcion</label>
+                            <input type="text" name="descripcion" id="descripcion"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="text"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Usuario</label>
+                            <select type="text" name="id_usuario" id="id_usuario"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
+                                @foreach ($user as $id)
                                     <option></option>
-                                    <option>{{ $id->nombre }}</option>
+                                    <option>{{ $id->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <button type="submit"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Abonar
+                            matrícula</button>
                     </form>
 
                 </div>

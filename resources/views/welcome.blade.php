@@ -157,6 +157,231 @@
             margin-left: 300px !important;
         }
     </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 62.5%;
+            font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            color: #e95846;
+            text-decoration: none;
+        }
+
+        .pricing-table-title {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 2.6em;
+            color: #FFF;
+            margin-top: 15px;
+            text-align: left;
+            margin-bottom: 25px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-table-title a {
+            font-size: 0.6em;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+            clear: both;
+        }
+
+        /** ========================
+* Contenedor
+============================*/
+        .pricing-wrapper {
+            width: 960px;
+            margin: 40px auto 0;
+        }
+
+        .pricing-table {
+            margin: 0 10px;
+            text-align: center;
+            width: 300px;
+            float: left;
+            -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            -webkit-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        .pricing-table:hover {
+            -webkit-transform: scale(1.06);
+            -ms-transform: scale(1.06);
+            -o-transform: scale(1.06);
+            transform: scale(1.06);
+        }
+
+        .pricing-title {
+            background: #e95846;
+            padding: 20px 0;
+            font-size: 2em;
+            text-transform: uppercase;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-table.recommended .pricing-title {
+            background: #2db3cb;
+        }
+
+        .pricing-table.recommended .pricing-action {
+            background: #2db3cb;
+        }
+
+        .pricing-table .price {
+            background: #403e3d;
+            font-size: 3.4em;
+            font-weight: 700;
+            padding: 20px 0;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-table .price sup {
+            font-size: 0.4em;
+            position: relative;
+            left: 5px;
+        }
+
+        .table-list {
+            background: #FFF;
+            color: #403d3a;
+        }
+
+        .table-list li {
+            font-size: 1.4em;
+            font-weight: 700;
+            padding: 12px 8px;
+        }
+
+        .table-list li:before {
+            content: "\f00c";
+            font-family: 'FontAwesome';
+            color: #3fab91;
+            display: inline-block;
+            position: relative;
+            right: 5px;
+            font-size: 16px;
+        }
+
+        .table-list li span {
+            font-weight: 400;
+        }
+
+        .table-list li span.unlimited {
+            color: #FFF;
+            background: #e95846;
+            font-size: 0.9em;
+            padding: 5px 7px;
+            display: inline-block;
+            -webkit-border-radius: 38px;
+            -moz-border-radius: 38px;
+            border-radius: 38px;
+        }
+
+
+        .table-list li:nth-child(2n) {
+            background: #F0F0F0;
+        }
+
+        .table-buy {
+            background: #FFF;
+            padding: 15px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .table-buy p {
+            float: left;
+            color: #37353a;
+            font-weight: 700;
+            font-size: 2.4em;
+        }
+
+        .table-buy p sup {
+            font-size: 0.5em;
+            position: relative;
+            left: 5px;
+        }
+
+        .table-buy .pricing-action {
+            float: right;
+            color: #FFF;
+            background: #e95846;
+            padding: 10px 16px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 1.4em;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+            -webkit-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        .table-buy .pricing-action:hover {
+            background: #cf4f3e;
+        }
+
+        .recommended .table-buy .pricing-action:hover {
+            background: #228799;
+        }
+
+        /** ================
+* Responsive
+===================*/
+        @media only screen and (min-width: 768px) and (max-width: 959px) {
+            .pricing-wrapper {
+                width: 768px;
+            }
+
+            .pricing-table {
+                width: 236px;
+            }
+
+            .table-list li {
+                font-size: 1.3em;
+            }
+
+        }
+
+        @media only screen and (max-width: 767px) {
+            .pricing-wrapper {
+                width: 420px;
+            }
+
+            .pricing-table {
+                display: block;
+                float: none;
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 479px) {
+            .pricing-wrapper {
+                width: 300px;
+            }
+        }
+    </style>
     <!-- Navbar -->
     <script src="{{ asset('./resoruce/js/prueba.js') }}"></script>
 
@@ -311,7 +536,7 @@
 
             </div>
             <!-- Card 2 -->
-            <<div class="py-12">
+            <div class="py-12">
                 <div id="container">
                     <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15" id="card">
                         @foreach ($profesores as $profesor)
@@ -347,7 +572,7 @@
             </div>
             <div class="container mx-auto px-4 lg:pt-24 lg:pb-64 pb-20 pt-20">
                 <div class="flex flex-wrap text-center justify-center">
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-50 lg:w-6/12 px-4">
                         <h2 class="text-4xl font-semibold text-white uppercase">
                             Ventajas de acceder identificado
                         </h2>
@@ -358,54 +583,74 @@
                             alcanzando el máximo nivel y un largo etc.
                         </p>
                     </div>
+                    <div class="w-50 lg:w-6/12 px-4">
+                        <h2 class="text-4xl font-semibold text-white uppercase">
+                            Nuestro horario
+                        </h2>
+                        <p class="text-lg leading-relaxed mt-4 mb-4">
+                            - Lunes a Viernes: de 9.00h a 23.00 h<br>
+                            - Sábado: de 10.30h a 21.00h<br>
+                            - Domingo: cerrado
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Form -->
-        <!--<section class="relative block py-24 lg:pt-0 bg-black">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
-                    <div class="w-full lg:w-6/12 px-4">
-                        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
-                            data-aos="fade-up-right">
-                            <div class="flex-auto p-5 lg:p-10 bg-orange-500 text-white">
-                                <h4 class="text-2xl font-semibold">Want to work with us?</h4>
-                                <p class="leading-relaxed mt-1 mb-4">
-                                    Complete this form and we will get back to you in 24 hours.
-                                </p>
-                                <div class="relative w-full mb-3 mt-8">
-                                    <label class="block uppercase text-xs font-bold mb-2" for="full-name">Full
-                                        Name</label><input type="text"
-                                        class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                        placeholder="Full Name" style="transition: all 0.15s ease 0s" />
-                                </div>
-                                <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-xs font-bold mb-2"
-                                        for="email">Email</label><input type="email"
-                                        class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                        placeholder="Email" style="transition: all 0.15s ease 0s" />
-                                </div>
-                                <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-xs font-bold mb-2"
-                                        for="message">Message</label>
-                                    <textarea rows="4" cols="80"
-                                        class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                        placeholder="Type a message..."></textarea>
-                                </div>
-                                <div class="text-center mt-6">
-                                    <button
-                                        class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                                        type="button" style="transition: all 0.15s ease 0s">
-                                        Send Message
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="pricing-wrapper clearfix" style="margin-bottom: 2%">
+            <!-- Titulo -->
+
+            <div class="pricing-table">
+                <h3 class="pricing-title">Basico</h3>
+                <div class="price" style="background-color: #F4F4F4">30€<sup>/ meses</sup></div>
+                <!-- Lista de Caracteristicas / Propiedades -->
+                <ul class="table-list">
+                    <li>Duración <span>de un mes</span></li>
+                    <li>Supervisión <span>de un monitor especializdo</span></li>
+                    <li>Poder reservar <span>solo una instalación al día</span></li>
+                </ul>
+                <!-- Contratar / Comprar -->
+                <div class="table-buy">
+                    <p>30€<sup>/ mes</sup></p>
+                    <a href="/matricula/create" class="pricing-action">Comprar</a>
                 </div>
             </div>
-        </section>-->
+
+            <div class="pricing-table recommended">
+                <h3 class="pricing-title">Premium</h3>
+                <div class="price" style="background-color: #F4F4F4">180€<sup>/ 6 meses</sup></div>
+                <!-- Lista de Caracteristicas / Propiedades -->
+                <ul class="table-list">
+                    <li>Duración <span>de seis mes</span></li>
+                    <li>Supervisión <span>de un monitor especializdo </span></li>
+                    <li>Poder reservar <span>tres instalación al día</span></li>
+                </ul>
+                <!-- Contratar / Comprar -->
+                <div class="table-buy">
+                    <p>180€<sup>/ 6 mes</sup></p>
+                    <a href="/matricula/create" class="pricing-action">Comprar</a>
+                </div>
+            </div>
+
+            <div class="pricing-table">
+                <h3 class="pricing-title">Ultimate</h3>
+                <div class="price" style="background-color: #F4F4F4">360€<sup>/ 12mes</sup></div>
+                <!-- Lista de Caracteristicas / Propiedades -->
+                <ul class="table-list">
+                    <li>Duración <span>de 12 mes</span></li>
+                    <li>Supervisión <span>de un monitor y clases online</span></li>
+                    <li>Reservar <span>instalaciones ilimitadas al día</span></li>
+                </ul>
+                <!-- Contratar / Comprar -->
+                <div class="table-buy">
+                    <p>360€<sup>/ 12 mes</sup></p>
+                    <a href="/matricula/create" class="pricing-action">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+
 
         <div class="boton_whatsapp">
             <a href="https://wa.me/649143697"><img
@@ -443,31 +688,32 @@
     </main>
 
 
+
     <!-- FOOTER START -->
     <div class="footer">
         <div class="contain">
             <div class="col" id="politicas">
                 <h1 class="titulo">POLÍTICAS</h1>
                 <ul>
-                    <li><a href="aviso-legal">Aviso Legal</li>
-                    <li><a href="politicas-de-cookies">Política de cookies</li>
-                    <li><a href="politicas-de-privacidad">Política de privacidad</li>
+                    <li><a href="aviso-legal" style="color: white">Aviso Legal</li>
+                    <li><a href="politicas-de-cookies" style="color: white">Política de cookies</li>
+                    <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</li>
                 </ul>
             </div>
             <div class="col">
                 <h1>DESCUBRE</h1>
                 <ul>
-                    <li><a href="/">Inicio</li>
-                    <li><a href="instalaciones">Instalaciones</li>
-                    <li>Actividades</li>>
+                    <li><a href="/" style="color: white">Inicio</li>
+                    <li><a href="instalaciones" style="color: white">Instalaciones</li>
+                    <li style="color: white">Actividades</li>
                 </ul>
             </div>
             <div class="col">
                 <h1>CONTACTA</h1>
                 <ul>
-                    <li>649 14 36 97</li>
-                    <li>Calle Falsa nº123</li>
-                    <li>info@perfectbodylucena.com</li>
+                    <li style="color: white">649 14 36 97</li>
+                    <li style="color: white">Calle Falsa nº123</li>
+                    <li style="color: white">info@perfectbodylucena.com</li>
                 </ul>
             </div>
 

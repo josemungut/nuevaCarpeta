@@ -6,7 +6,9 @@ use App\Http\Controllers\contactoController;
 use App\Http\Controllers\frutasController;
 use App\Http\Controllers\instalacionesController;
 use App\Http\Controllers\landingcontroller;
+use App\Http\Controllers\matriculaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\reservarController;
 use App\Models\entrenador;
 use App\Models\informacionlandingpage;
 use App\Http\Controllers\salaController;
@@ -29,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $profesores = entrenador::all();
     $url = 'storage/';
-    return view('welcome')->with('profesores', $profesores)->with('url', $url);;
+    return view('welcome')->with('profesores', $profesores)->with('url', $url);
 });
 
 
@@ -61,6 +63,10 @@ Route::get('aviso-legal', function () {
 })->name('aviso-legal');
 
 
+Route::get('contacto', function () {
+    return view('contacto');
+})->name('contacto');
+
 
 // Route::get('instalaciones', function () {
 //     $profesores = instalaciones::all();
@@ -73,6 +79,7 @@ Route::get('aviso-legal', function () {
 Route::resource('instalaciones', instalacionesController::class)->middleware(['auth','verified']);
 Route::resource('actividades', actividadesController::class)->middleware(['auth','verified']);
 Route::resource('landing', landingcontroller::class)->middleware(['auth','verified']);
-
+Route::resource('matricula',matriculaController::class)->middleware(['auth','verified']);
+Route::resource('reserva', reservarController::class)->middleware(['auth','verified']);
 
 require __DIR__ . '/auth.php';

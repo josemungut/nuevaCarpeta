@@ -19,9 +19,9 @@ return new class extends Migration
             $table->date('fecha_fin');
             $table->string('imagen');
             $table->string('nombre', 50);
-            $table->foreignId('id_tipo_actividad')->constrained('tipo_actividad')->default(0);
-            $table->foreignId('id_sala')->constrained('sala')->default(0);
-            $table->foreignId('id_entrenador')->constrained('entrenador')->default(0);
+            $table->string('id_tipo_actividad')->constrained('tipo_actividad');
+            $table->string('id_sala')->constrained('sala');
+            $table->string('id_entrenador')->constrained('entrenador');
             $table->timestamps();
             $table->softDeletes();
         });

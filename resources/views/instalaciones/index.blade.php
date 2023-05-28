@@ -33,7 +33,7 @@
         .dummy_page {
             height: 200px;
             width: 100%;
-            background-color: black ;
+            background-color: black;
             text-align: center;
             box-sizing: border-box;
             padding: 60px 0px;
@@ -163,29 +163,36 @@
         #politicas {
             margin-left: 300px !important;
         }
-        #tarjeta{
-            margin-top: 15px !important;
+
+
+
+        #boton {
+            margin-left: 60%;
         }
+
     </style>
 
     <body>
 
-        <div class="banner" style="background-color: white">
-            <h1 style="color: orange">Bienvenido al sitio web</h1>
+        <div class="banner">
+            <h1 style="color: orange">Bienvenido al sitio web </h1>
             <p>¡Descubre nuestras últimas ofertas!</p>
+
         </div>
 
-        <div class="py-12" style="background-color: white" id="tarjeta">
-            <div id="container" style="background-color: white" >
-                <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15" style="background-color: white" >
+
+        <div class="py-12" id="tarjeta">
+            <div id="container">
+                <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15">
                     @foreach ($hola as $profesor)
-                        <div
-                            class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="background-color: black" id="tarjeta">
-                            <div class="p-5" >
+                        <div class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                            style="background-color: black" id="tarjeta">
+                            <div class="p-5">
 
                                 <img id="imagen" src="{{ asset($url . $profesor->imagen) }}">
 
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" style="color: white">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                                    style="color: white">
                                     {{ $profesor->nombre }}</h5>
 
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" style="color: white">
@@ -195,11 +202,30 @@
                                     <button type="button"
                                         class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Ver
                                         con mas detalle</button></a>
+                                @if (Auth::user()->tipo == 'admin')
+                                    <a href="{{ route('instalaciones.edit', ['instalacione' => $profesor->id]) }}"><button
+                                            type="button"
+                                            class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">Editar</button></a>
+                                    <form class="inline-block"
+                                        action={{ route('instalaciones.destroy', ['instalacione' => $profesor->id]) }}
+                                        method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Borrar</button>
+                                    </form>
+                                @endif
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
+        </div>
+        <div class="container">
+            @if (Auth::user()->tipo == 'admin')
+                <a href="{{ route('instalaciones.create') }}"><button type="button" id="boton"
+                        class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">Añañdir instalaciones</button></a>
+            @endif
         </div>
     </body>
 
@@ -233,8 +259,38 @@
             <div class="clearfix"></div>
         </div>
     </div>
+
+    <div class="boton_whatsapp">
+        <a href="https://wa.me/649143697"><img
+                src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
+    </div>
+    <style>
+        .boton_whatsapp {
+            transition-duration: 0.2s;
+            transform: scale(1);
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            border-style: solid;
+            border-radius: 50%;
+            border-color: #000000;
+            border-width: 1px;
+            margin: 13px;
+            z-index: 999;
+            background-color: #FFFFFF;
+        }
+
+        .boton_whatsapp:hover {
+            transition-duration: 0.2s;
+            transform: scale(0.9);
+        }
+
+        .boton_whatsapp img {
+            width: 55px;
+            height: 55px;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
 </x-app-layout>
-
-
-
-
