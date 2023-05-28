@@ -31,12 +31,12 @@ class actividadesController extends Controller
      */
     public function create()
     {
-        $clase1= entrenador::all();
-        $clase2= sala::all();
-        $clase3= tipo_actividades::all();
-        $clase4=actividades::all();
+        $clase1 = entrenador::all();
+        $clase2 = sala::all();
+        $clase3 = tipo_actividades::all();
+        $clase4 = actividades::all();
         try {
-            return view('actividades.create')->with('id_tipo_actividad',$clase3)->with('id_sala',$clase2)->with('id_entrenador',$clase1)->with('actividades',$clase4);
+            return view('actividades.create')->with('id_tipo_actividad', $clase3)->with('id_sala', $clase2)->with('id_entrenador', $clase1)->with('actividades', $clase4);
         } catch (QueryException $ex) {
             echo $ex;
         }
@@ -74,8 +74,9 @@ class actividadesController extends Controller
     public function show($id)
     {
         $bucarId = actividades::findOrFail($id);
+        $bucarId2 = tipo_actividades::findOrFail($id);
         $url = 'storage/';
-        return view('actividades.show')->with('profesores', $bucarId)->with('url', $url);
+        return view('actividades.show')->with('profesores', $bucarId)->with('actividades', $bucarId2)->with('url', $url);
     }
 
     /**

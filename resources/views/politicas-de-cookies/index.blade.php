@@ -1,5 +1,170 @@
-<style>
-    .titulo1 {
+<x-app-layout>
+
+    <style>
+        .banner {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .banner p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        #imagen {
+            max-width: 350px;
+        }
+
+        /* REMOVE THIS, USE YOUR OWN  */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, Sans-serif;
+            background-color: #070617;
+        }
+
+        .dummy_page {
+            height: 200px;
+            width: 100%;
+            background-color: #f0f0f0;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 60px 0px;
+        }
+
+        /* STYLES SPECIFIC TO FOOTER  */
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: #070617;
+        }
+
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+
+        .titulo {
+            color: orange !important;
+        }
+
+        #politicas {
+            margin-left: 300px !important;
+        }
+
+        .titulo1 {
         margin-left: 700px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
         font-size: 40px;
@@ -19,142 +184,7 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 20px;
     }
-
-    /* REMOVE THIS, USE YOUR OWN  */
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, Sans-serif;
-        background-color: #070617;
-    }
-
-    .dummy_page {
-        height: 200px;
-        width: 100%;
-        background-color: #f0f0f0;
-        text-align: center;
-        box-sizing: border-box;
-        padding: 60px 0px;
-    }
-
-    /* STYLES SPECIFIC TO FOOTER  */
-    .footer {
-        width: 100%;
-        position: relative;
-        height: auto;
-        background-color: #070617;
-    }
-
-    .footer .col {
-        width: 190px;
-        height: auto;
-        float: left;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        padding: 0px 20px 20px 20px;
-    }
-
-    .footer .col h1 {
-        margin: 0;
-        padding: 0;
-        font-family: inherit;
-        font-size: 12px;
-        line-height: 17px;
-        padding: 20px 0px 5px 0px;
-        color: rgba(255, 255, 255, 0.2);
-        font-weight: normal;
-        text-transform: uppercase;
-        letter-spacing: 0.250em;
-    }
-
-    .footer .col ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .footer .col ul li {
-        color: #999999;
-        font-size: 14px;
-        font-family: inherit;
-        font-weight: bold;
-        padding: 5px 0px 5px 0px;
-        cursor: pointer;
-        transition: .2s;
-        -webkit-transition: .2s;
-        -moz-transition: .2s;
-    }
-
-    .social ul li {
-        display: inline-block;
-        padding-right: 5px !important;
-    }
-
-    .footer .col ul li:hover {
-        color: #ffffff;
-        transition: .1s;
-        -webkit-transition: .1s;
-        -moz-transition: .1s;
-    }
-
-    .clearfix {
-        clear: both;
-    }
-
-    @media only screen and (min-width: 1280px) {
-        .contain {
-            width: 1200px;
-            margin: 0 auto;
-        }
-    }
-
-    @media only screen and (max-width: 1139px) {
-        .contain .social {
-            width: 1000px;
-            display: block;
-        }
-
-        .social h1 {
-            margin: 0px;
-        }
-    }
-
-    @media only screen and (max-width: 950px) {
-        .footer .col {
-            width: 33%;
-        }
-
-        .footer .col h1 {
-            font-size: 14px;
-        }
-
-        .footer .col ul li {
-            font-size: 13px;
-        }
-    }
-
-    @media only screen and (max-width: 500px) {
-        .footer .col {
-            width: 50%;
-        }
-
-        .footer .col h1 {
-            font-size: 14px;
-        }
-
-        .footer .col ul li {
-            font-size: 13px;
-        }
-    }
-
-    @media only screen and (max-width: 340px) {
-        .footer .col {
-            width: 100%;
-        }
-    }
-</style>
+    </style>
 
 <h1 class="titulo1">POLÍTICAS DE COOKIES</h1>
 <h2 class="titulo">1. Definición Y Función Genérica De Las Cookies.</h2>
@@ -261,7 +291,7 @@
     con un nivel de protección acorde a la normativa europea. Si deseas información sobre el uso que Google da a las
     cookies te adjuntamos este enlace
 </p>
-
+    </body>
     <div class="footer">
         <div class="contain">
             <div class="col" id="politicas">
@@ -292,3 +322,38 @@
             <div class="clearfix"></div>
         </div>
     </div>
+
+    <div class="boton_whatsapp">
+        <a href="https://wa.me/649143697"><img
+                src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
+    </div>
+    <style>
+        .boton_whatsapp {
+            transition-duration: 0.2s;
+            transform: scale(1);
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            border-style: solid;
+            border-radius: 50%;
+            border-color: #000000;
+            border-width: 1px;
+            margin: 13px;
+            z-index: 999;
+            background-color: #FFFFFF;
+        }
+
+        .boton_whatsapp:hover {
+            transition-duration: 0.2s;
+            transform: scale(0.9);
+        }
+
+        .boton_whatsapp img {
+            width: 55px;
+            height: 55px;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</x-app-layout>
