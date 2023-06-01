@@ -39,6 +39,12 @@ class instalacionesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'descripcion_corta' => 'required',
+            'imagen' => 'required',
+        ]);
         $clase = new instalaciones();
         $clase->nombre = $request->nombre;
         $clase->descripcion = $request->descripcion;

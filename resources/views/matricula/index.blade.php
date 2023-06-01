@@ -1,7 +1,6 @@
 <x-app-layout>
     <!DOCTYPE html>
     <html lang="es">
-
     <section class="flex flex-col md:flex-row  md:h-[32rem]  xl:px-16 ">
         <div class=" md:w-1/2 h-52 md:h-full p-4 flex flex-col xl:py-5 justify-between xl:pr-10">
             <div class="relative h-5 flex justify-center order-2 md:order-none">
@@ -182,8 +181,8 @@
 
 
     <div class="boton_whatsapp">
-        <a href="https://wa.me/649143697"><img
-                src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
+        <a href="https://wa.me/649143697"><img src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg"
+                alt="WhatsApp" /></a>
     </div>
     <style>
         .boton_whatsapp {
@@ -214,6 +213,7 @@
             vertical-align: middle;
         }
     </style>
+
 
 
 </x-app-layout>

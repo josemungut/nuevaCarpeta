@@ -5,6 +5,233 @@
         </h2>
     </x-slot>
 
+    <style>
+        @media only screen and (min-width: 1280px) {
+            .container {
+                white-space: nowrap;
+                /* para evitar el salto de línea */
+            }
+
+            #elemento1,
+            #elemento2 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            #elemento3 {
+                display: inline-block;
+                width: 70%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            .conatiner2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                /* Ajusta la altura del contenedor según tus necesidades */
+            }
+
+            #boton {
+                background-color: orange;
+                color: white
+            }
+
+
+            #boton:hover {
+                background-color: white;
+                color: orange;
+                border-color: orange;
+                border: 1px solid;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .container {
+                white-space: nowrap;
+                /* para evitar el salto de línea */
+            }
+
+            #elemento1,
+            #elemento2 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            #elemento3 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            .conatiner2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                /* Ajusta la altura del contenedor según tus necesidades */
+            }
+
+            #boton {
+                background-color: orange;
+                color: white
+            }
+
+
+            #boton:hover {
+                background-color: white;
+                color: orange;
+                border-color: orange;
+                border: 1px solid;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .container {
+                white-space: nowrap;
+                /* para evitar el salto de línea */
+            }
+
+            #elemento1,
+            #elemento2 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            #elemento3 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            .conatiner2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                /* Ajusta la altura del contenedor según tus necesidades */
+            }
+
+            #boton {
+                background-color: orange;
+                color: white
+            }
+
+
+            #boton:hover {
+                background-color: white;
+                color: orange;
+                border-color: orange;
+                border: 1px solid;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .container {
+                white-space: nowrap;
+                /* para evitar el salto de línea */
+            }
+
+            #elemento1,
+            #elemento2 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            #elemento3 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            .conatiner2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                /* Ajusta la altura del contenedor según tus necesidades */
+            }
+
+            #boton {
+                background-color: orange;
+                color: white
+            }
+
+
+            #boton:hover {
+                background-color: white;
+                color: orange;
+                border-color: orange;
+                border: 1px solid;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .container {
+                white-space: nowrap;
+                /* para evitar el salto de línea */
+            }
+
+            #elemento1,
+            #elemento2 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            #elemento3 {
+                display: inline-block;
+                width: 50%;
+                /* ajusta el ancho según tus necesidades */
+                vertical-align: top;
+                /* alinea los elementos superiormente */
+            }
+
+            .conatiner2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                /* Ajusta la altura del contenedor según tus necesidades */
+            }
+
+            #boton {
+                background-color: orange;
+                color: white
+            }
+
+
+            #boton:hover {
+                background-color: white;
+                color: orange;
+                border-color: orange;
+                border: 1px solid;
+            }
+        }
+    </style>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -12,19 +239,22 @@
 
                     <form method="POST" action="{{ route('matricula.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <div class="mb-6">
-                            <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                            <input type="text" name="nombre" id="nombre"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellidos</label>
-                            <input type="text" name="apellidos" id="apellidos"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
+                        <div class="container">
+                            <div class="mb-6" id="elemento1" style="width: 30%">
+                                <label for="text"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                                <input type="text" name="nombre" id="nombre"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required>
+                                {{ $errors->first('nombre') }}
+                            </div>
+                            <div class="mb-6" id="elemento3">
+                                <label for="text"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellidos</label>
+                                <input type="text" name="apellidos" id="apellidos"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required>
+                            </div>
                         </div>
                         <div class="mb-6">
                             <label for="text"
@@ -41,19 +271,22 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required>
                         </div>
-                        <div class="mb-6">
-                            <label for="number"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Telefono</label>
-                            <input type="number" name="telefono" id="telefono"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                            <input type="text" name="email" id="email"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
+                        <div class="container">
+                            <div class="mb-6" id="elemento1">
+                                <label for="number"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Telefono</label>
+                                <input type="number" name="telefono" id="telefono"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required>
+                                {{ $errors->first('telefono') }}
+                            </div>
+                            <div class="mb-6" id="elemento2">
+                                <label for="text"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                <input type="text" name="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required>
+                            </div>
                         </div>
                         <div class="mb-6">
                             <label for="text"
@@ -62,21 +295,14 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required>
                         </div>
-                        <div class="mb-6">
-                            <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Usuario</label>
-                            <select type="text" name="id_usuario" id="id_usuario"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
-                                @foreach ($user as $id)
-                                    <option></option>
-                                    <option>{{ $id->name }}</option>
-                                @endforeach
-                            </select>
+                        @foreach ($user as $id)
+                            <input type="hidden" name="id_usuario" id="id_usuario" value="{{ $id->id }}" />
+                        @endforeach
+                        <div class="conatiner2">
+                            <button type="submit" id="boton"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Abonar
+                                matrícula</button>
                         </div>
-                        <button type="submit"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Abonar
-                            matrícula</button>
                     </form>
 
                 </div>
@@ -85,8 +311,8 @@
     </div>
 
     <div class="boton_whatsapp">
-        <a href="https://wa.me/649143697"><img
-                src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
+        <a href="https://wa.me/649143697"><img src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg"
+                alt="WhatsApp" /></a>
     </div>
     <style>
         .boton_whatsapp {
@@ -118,5 +344,4 @@
         }
     </style>
 </x-app-layout>
-
 

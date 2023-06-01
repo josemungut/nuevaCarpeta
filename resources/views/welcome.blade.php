@@ -12,6 +12,7 @@
 
         #email {
             margin-left: 90px;
+            font-size: 15px;
         }
 
         /* REMOVE THIS, USE YOUR OWN  */
@@ -441,7 +442,7 @@
                             <p class="mt-4 text-lg text-gray-300">
                                 Bienvenidos a La Sala de Poder. Somos un centro de acondicionamiento físico y
                                 entrenamiento que se enfoca en llevarte a tu límite absoluto.
-                                <a href="#"
+                                <a href="/actividades"
                                     class="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white p-4 border border-orange-500 hover:border-transparent rounded inline-block mt-5 cursor-pointer">Visitar
                                     nuestras actividades</a>
                         </div>
@@ -540,7 +541,7 @@
                 <div id="container">
                     <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15" id="card">
                         @foreach ($profesores as $profesor)
-                            <div class="max-w-sm ml-15">
+                            <div class="max-w-sm ml-15" style="margin-top: -50px">
                                 <div class="p-5">
                                     <img class="imagen" src="{{ asset($url . $profesor->imagen) }}">
 

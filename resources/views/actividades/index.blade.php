@@ -25,15 +25,14 @@
                             Nombre
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Descripcion
-                        </th>
-                        <th scope="col" class="px-6 py-3">
                             Fecha_entrada
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Fecha_salida
                         </th>
-
+                        <th scope="col" class="px-6 py-3">
+                            Hora
+                        </th>
                         <th scope="col" class="px-6 py-3">
                             Detalles
                         </th>
@@ -47,10 +46,6 @@
                                 {{ $clase->nombre }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ $clase->descripcion }}
-
-                            </td>
-                            <td class="px-6 py-4">
                                 {{ $clase->fecha_inicio }}
 
                             </td>
@@ -58,6 +53,9 @@
                                 {{ $clase->fecha_fin }}
                             </td>
 
+                            <td class="px-6 py-4">
+                                {{ $clase->hora }}
+                            </td>
                             <td>
                                 <a href="{{ route('actividades.show', ['actividade' => $clase->id]) }}"><button
                                         type="button"

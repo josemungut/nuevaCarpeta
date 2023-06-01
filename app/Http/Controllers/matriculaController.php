@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\especificaciones_matricula;
 use App\Models\matricula;
 use App\Models\User;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class matriculaController extends Controller
 {
@@ -17,7 +19,7 @@ class matriculaController extends Controller
     public function index()
     {
         $matricula = matricula::all();
-            return view('matricula.index')->with('matricula',$matricula);
+        return view('matricula.index')->with('matricula', $matricula);
     }
 
     /**
@@ -40,6 +42,11 @@ class matriculaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|string',
+            'telefono' => 'numeric|max:2'
+        ]);
+
         $clase = new matricula();
         $clase2 = User::all();
         $clase->nombre = $request->nombre;

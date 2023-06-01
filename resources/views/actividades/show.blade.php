@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Mas informacion sobre clases') }}
+            {{ __('Mas informacion sobre la actividad') }}
         </h2>
     </x-slot>
 
@@ -173,9 +173,10 @@
         <div class="px-30 lg:px-16 md:w-1/2" style="margin-top: 3%">
             <p class="text-5xl font-bold mb-12">{{ $profesores->nombre }}</p>
             <p>{{ $profesores->descripcion }}</p>
-            <p>{{ $profesores->descripcion_corta }}</p>
-            <p>{{ $actividades->descripcion }}</p>
-
+            <p>{{ $profesores->descripcion_corta }}</p><br>
+            <p>{{ $profesores->hora }}</p><br>
+            <p>{{ $profesores->fecha_inicio }}</p>
+            <p>{{ $profesores->fecha_fin }}</p>
         </div>
     </section>
 

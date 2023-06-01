@@ -53,8 +53,10 @@ class actividadesController extends Controller
 
         $clase = new actividades();
         $clase->nombre = $request->nombre;
+        $clase->descripcion = $request->descripcion;
         $clase->fecha_inicio = $request->fecha_inicio;
         $clase->fecha_fin = $request->fecha_fin;
+        $clase->hora = $request->hora;
         $clase->id_tipo_actividad = $request->id_tipo_actividad;
         $clase->id_sala = $request->id_sala;
         $clase->id_entrenador = $request->id_entrenador;
@@ -111,8 +113,10 @@ class actividadesController extends Controller
 
             $clase = actividades::findOrFail($id);
             $clase->nombre = $request->nombre;
+            $clase->descripcion = $request->descripcion;
             $clase->fecha_inicio = $request->fecha_inicio;
             $clase->fecha_fin = $request->fecha_fin;
+            $clase->hora = $request->hora;
             $clase->imagen = $request->imagen;
             if (is_uploaded_file($request->imagen)) {
                 $nombrefoto = time() . "-" . $request->file('imagen')->getClientOriginalName();

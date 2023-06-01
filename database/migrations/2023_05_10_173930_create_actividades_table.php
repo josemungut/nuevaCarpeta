@@ -19,6 +19,8 @@ return new class extends Migration
             $table->date('fecha_fin');
             $table->string('imagen');
             $table->string('nombre', 50);
+            $table->string('descripcion');
+            $table->time('hora');
             $table->string('id_tipo_actividad')->constrained('tipo_actividad');
             $table->string('id_sala')->constrained('sala');
             $table->string('id_entrenador')->constrained('entrenador');

@@ -1,47 +1,143 @@
 <style>
-    .class {
-        margin-right: 700px
+    @media only screen and (max-width: 340px) {
+        .class {
+            margin-right: 700px
+        }
+
+        #nav {
+            background-color: #F97316;
+        }
+
+        #titulo {
+            color: black;
+        }
+
+        .color {
+            color: black;
+            padding-top: 15%
+        }
+
+        #login {
+            color: black;
+        }
+
+        #navLink {}
+
+        .añadir {
+            padding-right: 30%;
+            padding-top: 5%;
+            color: black
+        }
+
+        .lineaarriba {
+            height: 1px;
+            margin-top: 5px;
+            width: 200%;
+        }
+
+        #logo {
+            margin-left: 80px;
+        }
+
+        #boton {}
+
+        #titulo2 {
+            color: blue;
+        }
     }
 
-    #nav {
-        background-color: #F97316;
+    @media only screen and (max-width: 500px) {
+        .class {
+            margin-right: 700px
+        }
+
+        #nav {
+            background-color: #F97316;
+        }
+
+        #titulo {
+            color: black;
+        }
+
+        .color {
+            color: black;
+            padding-top: 15%
+        }
+
+        #login {
+            color: black;
+        }
+
+        #navLink {}
+
+        .añadir {
+            padding-right: 30%;
+            padding-top: 5%;
+            color: black
+        }
+
+        .lineaarriba {
+            height: 1px;
+            margin-top: 5px;
+            width: 200%;
+        }
+
+        #logo {
+            margin-left: 80px;
+        }
+
+        #boton {}
+
+        #titulo2 {
+            color: blue;
+        }
     }
 
-    #titulo {
-        color: black;
-    }
+    @media only screen and (max-width: 950px) {
+        .class {
+            margin-right: 700px
+        }
 
-    .color {
-        color: black;
-        padding-top: 15%
-    }
+        #nav {
+            background-color: #F97316;
+        }
 
-    #login {
-        color: black;
-    }
+        #titulo {
+            color: black;
+        }
 
-    #navLink {}
+        .color {
+            color: black;
+            padding-top: 15%
+        }
 
-    .añadir {
-        padding-right: 30%;
-        padding-top: 5%;
-        color: black
-    }
+        #login {
+            color: black;
+        }
 
-    .lineaarriba {
-        height: 1px;
-        margin-top: 5px;
-        width: 200%;
-    }
+        #navLink {}
 
-    #logo {
-        margin-left: 80px;
-    }
+        .añadir {
+            padding-right: 30%;
+            padding-top: 5%;
+            color: black
+        }
 
-    #boton {}
+        .lineaarriba {
+            height: 1px;
+            margin-top: 5px;
+            width: 200%;
+        }
 
-    #titulo2 {
-        color: blue;
+        #logo {
+            margin-left: 80px;
+        }
+
+        #boton {}
+
+        #titulo2 {
+            color: blue;
+        }
     }
 </style>
 
@@ -75,8 +171,10 @@
                         <x-nav-link :href="route('matricula.index')" :active="request()->routeIs('matricula.index')" class="añadir">
                             <b>{{ __('Matricula') }}</b>
                         </x-nav-link>
+                        <x-nav-link :href="route('reserva.index')" :active="request()->routeIs('reserva.index')" class="añadir">
+                            <b>{{ __('Reserva') }}</b>
+                        </x-nav-link>
                         @if (Auth::user()->tipo == 'admin')
-
                         @endif
                     </div>
                 </div>
