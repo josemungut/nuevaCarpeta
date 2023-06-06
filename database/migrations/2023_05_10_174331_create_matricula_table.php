@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->date('fecha');
-            $table->float('cuota_mensual');
             $table->integer('telefono');
             $table->string('email');
             $table->string('descripcion');
             $table->string('id_usuario')->constrained('users');
+            $table->string('id_pago')->constrained('pago');
             $table->SoftDeletes();
                 $table->timestamps();
         });

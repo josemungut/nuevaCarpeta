@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\especificaciones_matricula;
 use App\Models\matricula;
+use App\Models\pago;
 use App\Models\User;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
@@ -31,7 +32,8 @@ class matriculaController extends Controller
     {
         $clase1 = matricula::all();
         $clase2 = User::all();
-        return view('matricula.create')->with('matricula', $clase1)->with('user', $clase2);
+        $clase3=  pago:: all();
+        return view('matricula.create')->with('matricula', $clase1)->with('user', $clase2)->with('id_pago',$clase3);
     }
 
     /**
@@ -52,7 +54,7 @@ class matriculaController extends Controller
         $clase->nombre = $request->nombre;
         $clase->apellidos = $request->apellidos;
         $clase->fecha = $request->fecha;
-        $clase->cuota_mensual = $request->cuota_mensual;
+        $clase->id_pago = $request->id_pago;
         $clase->telefono = $request->telefono;
         $clase->email = $request->email;
         $clase->descripcion = $request->descripcion;
@@ -96,7 +98,6 @@ class matriculaController extends Controller
         $request->validate([
             'nombre' => 'required',
             'fecha' => 'required',
-            'cuota_mensual' => 'required',
             'telefono' => 'required',
             'email' => 'required',
             'descripcion' => 'required',
@@ -106,7 +107,7 @@ class matriculaController extends Controller
         $clase = matricula::findOrFail($id);
         $clase->nombre = $request->nombre;
         $clase->fecha = $request->fecha;
-        $clase->cuota_mensual = $request->cuota_mensual;
+        $clase->id_pago = $request->id_pago;
         $clase->telefono = $request->telefono;
         $clase->email = $request->email;
         $clase->descripcion = $request->descripcion;

@@ -19,7 +19,7 @@ class reserva extends Model
     }
     public function actividad(): BelongsTo
     {
-        return $this->belongsTo(actividades::class);
+        return $this->belongsTo(actividades::class,'id_actividad');
     }
 }
 

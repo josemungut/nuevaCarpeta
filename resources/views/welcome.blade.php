@@ -153,10 +153,6 @@
         */ .titulo {
             color: orange !important;
         }
-
-        #politicas {
-            margin-left: 300px !important;
-        }
     </style>
 
     <style>
@@ -384,7 +380,6 @@
         }
     </style>
     <!-- Navbar -->
-    <script src="{{ asset('./resoruce/js/prueba.js') }}"></script>
 
     <!--<nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
         <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -546,7 +541,8 @@
                                     <img class="imagen" src="{{ asset($url . $profesor->imagen) }}">
 
                                     <a href="#">
-                                        <h5 id="nombre" class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                        <h5 id="nombre"
+                                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                             {{ $profesor->nombre }} {{ $profesor->apellidos }}</h5>
                                     </a>
                                     <p id="email" class="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -557,7 +553,7 @@
                         @endforeach
                     </div>
                 </div>
-                </div>
+            </div>
 
 
         </section>
@@ -693,7 +689,7 @@
     <!-- FOOTER START -->
     <div class="footer">
         <div class="contain">
-            <div class="col" id="politicas">
+            <div class="col">
                 <h1 class="titulo">POLÍTICAS</h1>
                 <ul>
                     <li><a href="aviso-legal" style="color: white">Aviso Legal</li>
@@ -717,10 +713,8 @@
                     <li style="color: white">info@perfectbodylucena.com</li>
                 </ul>
             </div>
-
             <div class="clearfix"></div>
         </div>
     </div>
-    <!-- END OF FOOTER -->
 
 </x-app-layout>

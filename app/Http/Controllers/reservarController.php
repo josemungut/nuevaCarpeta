@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\actividades;
 use App\Models\reserva;
+use App\Models\sala;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,8 +18,6 @@ class reservarController extends Controller
      */
     public function index()
     {
-
-
         $clase = reserva::all();
         $clientes = array();
         foreach ($clase as $c) {
@@ -49,10 +48,15 @@ class reservarController extends Controller
      */
     public function store(Request $request)
     {
-
+        $actividad = actividades::find($request->id_actividad);
+        echo $actividad;
+        $sala = sala::findOrFail($actividad->id_sala);
+        echo $sala;
+        $sala->aforo = $sala->aforo - 1;
+        $sala->save();
         $clase = new reserva();
         $clase->id_actividad = $request->id_actividad;
-        $clase->fecha_reserva =  date('Y-m-d H:i:s',time());
+        $clase->fecha_reserva =  date('Y-m-d H:i:s', time());
         $clase->id_users = Auth::user()->id;
         $clase->save();
         return redirect()->back();
@@ -101,6 +105,10 @@ class reservarController extends Controller
     public function destroy($id)
     {
         $clase = reserva::findOrFail($id);
+        $actividad = actividades::findOrFail($clase->id_actividad);
+        $sala = sala::findOrFail($actividad->id_sala);
+        $sala->aforo += 1;
+        $sala->save();
         $clase->delete();
         return redirect()->back();
     }

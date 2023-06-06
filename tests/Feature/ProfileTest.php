@@ -29,6 +29,7 @@ class ProfileTest extends TestCase
             ->actingAs($user)
             ->patch('/profile', [
                 'name' => 'Test User',
+                'tipo' => 'Tipo',
                 'email' => 'test@example.com',
             ]);
 
@@ -40,6 +41,8 @@ class ProfileTest extends TestCase
 
         $this->assertSame('Test User', $user->name);
         $this->assertSame('test@example.com', $user->email);
+        $this->assertSame('TIpo', $user->tipo);
+
         $this->assertNull($user->email_verified_at);
     }
 
@@ -52,6 +55,7 @@ class ProfileTest extends TestCase
             ->patch('/profile', [
                 'name' => 'Test User',
                 'email' => $user->email,
+                'tipo' => $user->tipo,
             ]);
 
         $response

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('pago', function (Blueprint $table) {
             $table->id();
-            $table->integer('fecha_pago');
-            $table->float('cantidad');
-            $table->foreignId('id_matricula')->constrained('matricula');
+            $table->string('cantidad');
+            $table->SoftDeletes();
+            $table->timestamps();
         });
     }
 

@@ -59,7 +59,7 @@
             font-size: 12px;
             line-height: 17px;
             padding: 20px 0px 5px 0px;
-            color: rgba(255, 255, 255, 0.2);
+            color: orange;
             font-weight: normal;
             text-transform: uppercase;
             letter-spacing: 0.250em;
@@ -151,12 +151,8 @@
             }
         }
 
-        .titulo {
+        */ .titulo {
             color: orange !important;
-        }
-
-        #politicas {
-            margin-left: 300px !important;
         }
 
         /*--------------------------------------------------------------
@@ -596,25 +592,25 @@ CSS Grid layout for wider screens, when browser supports grid:
             <div class="col" id="politicas">
                 <h1 class="titulo">POLÍTICAS</h1>
                 <ul>
-                    <li><a href="aviso-legal">Aviso Legal</li>
-                    <li><a href="politicas-de-cookies">Política de cookies</li>
-                    <li><a href="politicas-de-privacidad">Política de privacidad</li>
+                    <li><a href="aviso-legal" style="color: white">Aviso Legal</li>
+                    <li><a href="politicas-de-cookies" style="color: white">Política de cookies</li>
+                    <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</li>
                 </ul>
             </div>
             <div class="col">
                 <h1 class="titulo">DESCUBRE</h1>
                 <ul>
-                    <li><a href="/">Inicio</li>
-                    <li><a href="instalaciones">Instalaciones</li>
-                    <li>Actividades</li>>
+                    <li><a href="/" style="color: white">Inicio</li>
+                    <li><a href="instalaciones" style="color: white">Instalaciones</li>
+                    <li style="color: white">Actividades</li>
                 </ul>
             </div>
             <div class="col">
                 <h1 class="titulo">CONTACTA</h1>
                 <ul>
-                    <li>649 14 36 97</li>
-                    <li>Calle Falsa nº123</li>
-                    <li>info@perfectbodylucena.com</li>
+                    <li style="color: white">649 14 36 97</li>
+                    <li style="color: white">Calle Falsa nº123</li>
+                    <li style="color: white">info@perfectbodylucena.com</li>
                 </ul>
             </div>
 

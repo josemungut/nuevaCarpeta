@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class matricula extends Model
+class pago extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table = 'matricula';
+    protected $table = 'pago';
 
-    
+
 
 }
 

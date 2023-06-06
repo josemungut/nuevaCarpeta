@@ -1,4 +1,127 @@
 <x-app-layout>
+    <style>
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: black;
+        }
+
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: orange;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+
+        */ .titulo {
+            color: orange !important;
+        }
+
+
+    </style>
     <!DOCTYPE html>
     <html lang="es">
     <section class="flex flex-col md:flex-row  md:h-[32rem]  xl:px-16 ">
@@ -214,6 +337,35 @@
         }
     </style>
 
+    <div class="footer">
+        <div class="contain">
+            <div class="col">
+                <h1 class="titulo">POLÍTICAS</h1>
+                <ul class="titulo2"  style="text-align: center">
+                    <li><a href="aviso-legal" style="color: white">Aviso Legal</li>
+                    <li><a href="politicas-de-cookies" style="color: white">Política de cookies</li>
+                    <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1 class="titulo">DESCUBRE</h1>
+                <ul>
+                    <li><a href="/" style="color: white">Inicio</li>
+                    <li><a href="instalaciones" style="color: white">Instalaciones</li>
+                    <li style="color: white">Actividades</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1 class="titulo">CONTACTA</h1>
+                <ul>
+                    <li style="color: white">649 14 36 97</li>
+                    <li style="color: white">Calle Falsa nº123</li>
+                    <li style="color: white">info@perfectbodylucena.com</li>
+                </ul>
+            </div>
 
+            <div class="clearfix"></div>
+        </div>
+    </div>
 
 </x-app-layout>

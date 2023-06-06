@@ -1,22 +1,185 @@
-<style>
-    .titulo {
-            color: orange !important;
+
+
+
+
+<x-app-layout>
+
+    <style>
+        .banner {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .banner p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        #imagen {
+            max-width: 350px;
+        }
+
+        /* REMOVE THIS, USE YOUR OWN  */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, Sans-serif;
+            background-color: #070617;
+        }
+
+        .dummy_page {
+            height: 200px;
+            width: 100%;
+            background-color: #f0f0f0;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 60px 0px;
+        }
+
+        /* STYLES SPECIFIC TO FOOTER  */
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: #070617;
+        }
+
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+
+        .titulo {
+            color: #ffa500 !important;
         }
 
         #politicas {
             margin-left: 300px !important;
         }
 
-        .titulo1 {
+
+
+    .titulo1 {
         margin-left: 700px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
-        font-size: 40px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 35px;
     }
 
     .titulo {
         margin-left: 100px;
         margin-right: 100px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 30px;
 
     }
@@ -24,10 +187,10 @@
     .titulo2 {
         margin-left: 100px;
         margin-right: 100px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:Arial, Helvetica, sans-serif;
         font-size: 20px;
     }
-</style>
+    </style>
 
 <h1 class="titulo1">Políticas de Privacidad</h1>
 <h2 class="titulo">¿Quién Es El Responsable De Los Tratamientos De Sus Datos?</h2>
@@ -90,7 +253,8 @@
 
 <h2 class="titulo">¿Cuáles Son Sus Derechos Cuando Nos Facilita Sus Datos Personales?</h2>
 <p class="titulo2">La Política de Privacidad de <b>Perfect Body Lucena</b> le asegura, en todo caso, el ejercicio de tus
-    derechos en los términos establecidos en la legislación vigente. Puede hacerlo dirigiendo un escrito a <b>Perfect Body Lucena</b>
+    derechos en los términos establecidos en la legislación vigente. Puede hacerlo dirigiendo un escrito a <b>Perfect
+        Body Lucena</b>
     Calle Manzanos nº7, Lucena (Córdoba) o bien enviando un correo electrónico a info@perfectbodylucena.com.<br><br>
 
     Concretamente, cualquier persona tiene derecho a:<br><br>
@@ -99,14 +263,17 @@
     -A <b>solicitar la rectificación</b> de sus datos si son inexactos o incluso la supresión de sus datos si ya no son
     necesarios para los fines para los que fueron recogidos o si no retira el consentimiento otorgado.<br>
     -A <b>oponerse</b> al tratamiento de sus datos.<br>
-    -En algunos supuestos, a solicitar la limitación del tratamiento de sus datos, en cuyo caso sólo los conservaremos de
+    -En algunos supuestos, a solicitar la limitación del tratamiento de sus datos, en cuyo caso sólo los conservaremos
+    de
     acuerdo con la normativa vigente.<br>
-    -A <b>disponer de los datos</b> que haya facilitado electrónicamente, en un formato estructurado, de uso común o lectura
+    -A <b>disponer de los datos</b> que haya facilitado electrónicamente, en un formato estructurado, de uso común o
+    lectura
     mecánica. Si lo prefiere, que se envíen esos datos a otra empresa (si es técnicamente posible).<br>
     -Derecho a <b>rectificar tus datos</b>, cuando sean inexactos o cuando estén incompletos.
     -A presentar una reclamación ante la Agencia Española de Protección de Datos, si cree que no se le ha atendido
     correctamente.<br>
-    -A <b>revocar el consentimiento</b> para cualquier tratamiento para el que hayas consentido, en cualquier momento.<br><br>
+    -A <b>revocar el consentimiento</b> para cualquier tratamiento para el que hayas consentido, en cualquier
+    momento.<br><br>
     Si modifica algún dato, le agradecemos que nos lo comunique para mantenerlos actualizados.<br>
     Asimismo, le informamos de que puede presentar una reclamación ante la Agencia Española de Protección de Datos,
     especialmente cuando no haya obtenido satisfacción en el ejercicio de tus derechos.
@@ -114,7 +281,8 @@
 
 <h2 class="titulo">¿Cómo Hemos Obtenido Sus Datos?</h2>
 <p class="titulo2"><b>Perfect Body Lucena</b> toda la información personal que tenemos nos la has facilitado
-    presencialmente, a través del formulario de contacto, a través de nuestra página Web o por correo electrónico. Solo en casos excepcionales
+    presencialmente, a través del formulario de contacto, a través de nuestra página Web o por correo electrónico. Solo
+    en casos excepcionales
     completaremos la información que nos facilitas con fuentes públicas.<br>
 
     Los datos de carácter personal que tratamos son principalmente datos de identificación y contacto tales como,
@@ -126,7 +294,8 @@
 
 <h2 class="titulo">Nuestro Compromiso En Materia De Privacidad</h2>
 <p class="titulo2">Para garantizar la seguridad de tus datos de carácter personal, comunicamos nuestras directrices en
-    materia de privacidad y seguridad a todos nuestros empleados y adoptamos las medidas correspondientes para proteger la
+    materia de privacidad y seguridad a todos nuestros empleados y adoptamos las medidas correspondientes para proteger
+    la
     privacidad dentro de la empresa.
 </p>
 
@@ -148,10 +317,12 @@
     sistema operativo, proveedor de internet, número de accesos, fecha/hora, etc. Recopilamos estos datos con la
     intención de administrar nuestra Web, así como para conocer la conducta de nuestros clientes y poder personalizar
     los productos y/o servicios que ofrecer a los mismos. Todos los datos que de alguna manera puedan servir para
-    identificarte y que por tanto, se consideren datos de carácter personal, serán tratados como tales por <b>Perfect Body Lucena</b>   .<br>
+    identificarte y que por tanto, se consideren datos de carácter personal, serán tratados como tales por <b>Perfect
+        Body Lucena</b> .<br>
 
     En algunos de nuestros mensajes de correo electrónico podremos utilizar un enlace personalizado, vinculado a la Web
-    de <b>Perfect Body Lucena</b> . Al hacer clic en alguno de estos enlaces, el cliente pasa directamente a la página de
+    de <b>Perfect Body Lucena</b> . Al hacer clic en alguno de estos enlaces, el cliente pasa directamente a la página
+    de
     destino dentro de nuestra Web. En este sentido podremos hacer un seguimiento en nuestra Web de los clics recibidos,
     para determinar los intereses sobre temas específicos y valorar la eficacia de nuestras comunicaciones a clientes.
     Si no quieres que realicemos ese seguimiento, no hagas clic en los vínculos textuales o gráficos incluidos en los
@@ -159,37 +330,69 @@
 
     Para obtener más información le recomendamos que revise nuestra política de cookies.
 </p>
+    </body>
+    <div class="footer">
+        <div class="contain">
+            <div class="col" id="politicas">
+                <h1 class="titulo">POLÍTICAS</h1>
+                <ul>
+                    <li><a href="aviso-legal">Aviso Legal</li>
+                    <li><a href="politicas-de-cookies">Política de cookies</li>
+                    <li><a href="politicas-de-privacidad">Política de privacidad</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1 class="titulo">DESCUBRE</h1>
+                <ul>
+                    <li><a href="/">Inicio</li>
+                    <li><a href="instalaciones">Instalaciones</li>
+                    <li>Actividades</li>>
+                </ul>
+            </div>
+            <div class="col">
+                <h1 class="titulo">CONTACTA</h1>
+                <ul>
+                    <li>649 14 36 97</li>
+                    <li>Calle Falsa nº123</li>
+                    <li>info@perfectbodylucena.com</li>
+                </ul>
+            </div>
 
-<div class="boton_whatsapp">
-    <a href="https://wa.me/649143697"><img
-            src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
-</div>
-<style>
-    .boton_whatsapp {
-        transition-duration: 0.2s;
-        transform: scale(1);
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        border-style: solid;
-        border-radius: 50%;
-        border-color: #000000;
-        border-width: 1px;
-        margin: 13px;
-        z-index: 999;
-        background-color: #FFFFFF;
-    }
+            <div class="clearfix"></div>
+        </div>
+    </div>
 
-    .boton_whatsapp:hover {
-        transition-duration: 0.2s;
-        transform: scale(0.9);
-    }
+    <div class="boton_whatsapp">
+        <a href="https://wa.me/649143697"><img
+                src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
+    </div>
+    <style>
+        .boton_whatsapp {
+            transition-duration: 0.2s;
+            transform: scale(1);
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            border-style: solid;
+            border-radius: 50%;
+            border-color: #000000;
+            border-width: 1px;
+            margin: 13px;
+            z-index: 999;
+            background-color: #FFFFFF;
+        }
 
-    .boton_whatsapp img {
-        width: 55px;
-        height: 55px;
-        padding: 10px;
-        text-align: center;
-        vertical-align: middle;
-    }
-</style>
+        .boton_whatsapp:hover {
+            transition-duration: 0.2s;
+            transform: scale(0.9);
+        }
+
+        .boton_whatsapp img {
+            width: 55px;
+            height: 55px;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</x-app-layout>

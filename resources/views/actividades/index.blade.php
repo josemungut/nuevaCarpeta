@@ -27,11 +27,12 @@
                         <th scope="col" class="px-6 py-3">
                             Fecha_entrada
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Fecha_salida
-                        </th>
+
                         <th scope="col" class="px-6 py-3">
                             Hora
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Aforo
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Detalles
@@ -49,24 +50,27 @@
                                 {{ $clase->fecha_inicio }}
 
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $clase->fecha_fin }}
-                            </td>
 
                             <td class="px-6 py-4">
                                 {{ $clase->hora }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $clase->sala->aforo }}
                             </td>
                             <td>
                                 <a href="{{ route('actividades.show', ['actividade' => $clase->id]) }}"><button
                                         type="button"
                                         class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">Detalle</button></a>
-                                <form class="inline-block" action={{ route('reserva.store') }} method="POST">
-                                    @csrf
-                                    @method('POST')
-                                    <input type="hidden" name="id_actividad" value="{{ $clase->id }}"> <button
-                                        type="submit"
-                                        class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">RESERVAR</button>
-                                </form>
+                                @if ($clase->sala->aforo > 0)
+                                    <form class="inline-block" action={{ route('reserva.store') }} method="POST">
+                                        @csrf
+                                        @method('POST')
+                                        <input type="hidden" name="id_actividad" value="{{ $clase->id }}"> <button
+                                            type="submit"
+                                            class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">RESERVAR</button>
+                                    </form>
+                                @endif
+
                                 @if (Auth::user()->tipo == 'admin')
                                     <a href="{{ route('actividades.edit', ['actividade' => $clase->id]) }}"><button
                                             type="button"

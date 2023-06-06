@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <style>
+    <!-- <style>
         .banner {
             background-color: #f2f2f2;
             padding: 20px;
@@ -170,26 +170,25 @@
             margin-left: 60%;
         }
 
-    </style>
+    </style> -->
 
     <body>
 
-        <div class="banner">
-            <h1 style="color: orange">Bienvenido al sitio web </h1>
-            <p>¡Descubre nuestras últimas ofertas!</p>
+        <div class="text-center w-full">
+            <h1 class="text-xl font-bold" style="color: orange">Bienvenido al sitio web </h1>
+            <p class="text-lg font-semibold">¡Descubre nuestras últimas ofertas!</p>
 
         </div>
 
 
-        <div class="py-12" id="tarjeta">
+        <div class="my-12" id="tarjeta">
             <div id="container">
-                <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full lg:w-5/6 ml-2 mr-2 lg:mx-auto">
                     @foreach ($hola as $profesor)
-                        <div class="max-w-sm bg-white border border-gray-200 ml-15 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                        <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow"
                             style="background-color: black" id="tarjeta">
-                            <div class="p-5">
 
-                                <img id="imagen" src="{{ asset($url . $profesor->imagen) }}">
+                                <img id="imagen" src="{{ asset($url . $profesor->imagen) }}" class="w-full h-56">
 
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                                     style="color: white">
@@ -215,7 +214,6 @@
                                             class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Borrar</button>
                                     </form>
                                 @endif
-                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -229,7 +227,7 @@
         </div>
     </body>
 
-    <div class="footer">
+    <!-- <div class="footer">
         <div class="contain">
             <div class="col" id="politicas">
                 <h1 class="titulo">POLÍTICAS</h1>
@@ -292,5 +290,5 @@
             text-align: center;
             vertical-align: middle;
         }
-    </style>
+    </style> -->
 </x-app-layout>

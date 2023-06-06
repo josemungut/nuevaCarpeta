@@ -186,49 +186,48 @@
             }
         }
 
-        @media only screen and (max-width: 340px) {
-            .container {
-                white-space: nowrap;
-                /* para evitar el salto de línea */
-            }
 
-            #elemento1,
-            #elemento2 {
-                display: inline-block;
-                width: 50%;
-                /* ajusta el ancho según tus necesidades */
-                vertical-align: top;
-                /* alinea los elementos superiormente */
-            }
+        .container {
+            white-space: nowrap;
+            /* para evitar el salto de línea */
+        }
 
-            #elemento3 {
-                display: inline-block;
-                width: 50%;
-                /* ajusta el ancho según tus necesidades */
-                vertical-align: top;
-                /* alinea los elementos superiormente */
-            }
+        #elemento1,
+        #elemento2 {
+            display: inline-block;
+            width: 50%;
+            /* ajusta el ancho según tus necesidades */
+            vertical-align: top;
+            /* alinea los elementos superiormente */
+        }
 
-            .conatiner2 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        #elemento3 {
+            display: inline-block;
+            width: 70%;
+            /* ajusta el ancho según tus necesidades */
+            vertical-align: top;
+            /* alinea los elementos superiormente */
+        }
 
-                /* Ajusta la altura del contenedor según tus necesidades */
-            }
+        .conatiner2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            #boton {
-                background-color: orange;
-                color: white
-            }
+            /* Ajusta la altura del contenedor según tus necesidades */
+        }
+
+        #boton {
+            background-color: orange;
+            color: white
+        }
 
 
-            #boton:hover {
-                background-color: white;
-                color: orange;
-                border-color: orange;
-                border: 1px solid;
-            }
+        #boton:hover {
+            background-color: white;
+            color: orange;
+            border-color: orange;
+            border: 1px solid;
         }
     </style>
 
@@ -265,11 +264,13 @@
                         </div>
                         <div class="mb-6">
                             <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cuota
-                                Mensual</label>
-                            <input type="text" name="cuota_mensual" id="cuota_mensual"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cuota</label>
+                            <select required name="id_tipo_actividad" id="id_tipo_actividad"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                @foreach ($id_pago as $id)
+                                    <option>{{ $id->cantidad }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="container">
                             <div class="mb-6" id="elemento1">
@@ -295,6 +296,9 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required>
                         </div>
+                        @foreach ($id_pago as $id)
+                        <input type="hidden" name="id_pago" id="id_pago" value="{{ $id->id }}" />
+                    @endforeach
                         @foreach ($user as $id)
                             <input type="hidden" name="id_usuario" id="id_usuario" value="{{ $id->id }}" />
                         @endforeach
@@ -344,4 +348,3 @@
         }
     </style>
 </x-app-layout>
-
