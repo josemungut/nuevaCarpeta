@@ -48,18 +48,16 @@ class reservarController extends Controller
      */
     public function store(Request $request)
     {
+
         $actividad = actividades::find($request->id_actividad);
-        echo $actividad;
         $sala = sala::findOrFail($actividad->id_sala);
-        echo $sala;
-        $sala->aforo = $sala->aforo - 1;
         $sala->save();
         $clase = new reserva();
         $clase->id_actividad = $request->id_actividad;
         $clase->fecha_reserva =  date('Y-m-d H:i:s', time());
         $clase->id_users = Auth::user()->id;
         $clase->save();
-        return redirect()->back();
+        return redirect()->route('actividades.index')->with('status', "participante introducido");
     }
 
     /**
@@ -111,5 +109,10 @@ class reservarController extends Controller
         $sala->save();
         $clase->delete();
         return redirect()->back();
+    }
+
+    public function numeroreserva($id_actividad)
+    {
+        // $clase= reserva
     }
 }

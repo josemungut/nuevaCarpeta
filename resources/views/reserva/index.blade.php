@@ -1,7 +1,6 @@
 <x-app-layout>
 
     <style>
-
         body {
             font-family: sans-serif;
         }
@@ -152,10 +151,7 @@
         </div>
     </section>
 
-    <section class="hero2">
-        <h2>What's on the Menu This Weekend?</h2>
-    </section>
-
+   
 
 
 

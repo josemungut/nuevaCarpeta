@@ -11,11 +11,10 @@
             padding-left: 5%;
         }
     </style>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Clases') }}
-        </h2>
-    </x-slot>
+    <section class="hero2">
+        <h2>El lugar ideal para entrenar, competir y disfrutar:<br> nuestro centro deportivo.</h2>
+    </section>
+
     <div class="py-12">
         <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -48,14 +47,12 @@
                             </th>
                             <td class="px-6 py-4">
                                 {{ $clase->fecha_inicio }}
-
                             </td>
-
                             <td class="px-6 py-4">
                                 {{ $clase->hora }}
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $clase->sala->aforo }}
+                             <td class="px-6 py-4">
+                                {{ $clase->plazaslibres()}}
                             </td>
                             <td>
                                 <a href="{{ route('actividades.show', ['actividade' => $clase->id]) }}"><button
@@ -73,8 +70,8 @@
 
                                 @if (Auth::user()->tipo == 'admin')
                                     <a href="{{ route('actividades.edit', ['actividade' => $clase->id]) }}"><button
-                                            type="button"
-                                            class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">Editar</button></a>
+                                            type="button" c
+                                            lass="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">Editar</button></a>
                                     <form class="inline-block"
                                         action={{ route('actividades.destroy', ['actividade' => $clase->id]) }}
                                         method="POST">
@@ -134,3 +131,67 @@
         }
     </style>
 </x-app-layout>
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+
+
+    .hero1 h1,
+    .hero2 h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+
+    }
+
+    .hero2 {
+        background-color: #7A6174;
+        background-image:
+            /* photo by Michael G for Unsplash */
+            url("https://images.unsplash.com/photo-1434682881908-b43d0467b798?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNlbnRybyUyMGRlcG9ydGl2b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"),
+            url("https://images.unsplash.com/photo-1550171362-62bca9e5ad4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
+        /* photo by Susan Q Yin for Unsplash */
+        background-position: left, right;
+        background-size: contain;
+        background-blend-mode: hard-light;
+        background-repeat: no-repeat;
+        text-align: center;
+        padding: 150px 0;
+        color: white;
+    }
+
+
+
+    @media all AND (max-width: 500px) {
+        .hero2 {
+            background-image: url("");
+            /* photo by Michael G for Unsplash */
+            background-position: center;
+            background-size: cover;
+            background-blend-mode: hard-light;
+            background-repeat: no-repeat;
+        }
+
+
+        .container {
+            flex-direction: column;
+        }
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        /* Establece una altura para el contenedor */
+    }
+</style>

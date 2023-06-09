@@ -231,6 +231,7 @@
         }
     </style>
 
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -268,9 +269,17 @@
                             <select required name="id_tipo_actividad" id="id_tipo_actividad"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($id_pago as $id)
-                                    <option>{{ $id->cantidad }}</option>
+                                    @php
+                                     $selected = '';
+                                        if ($_GET['price'] . '€' == $id->cantidad) {
+                                            $selected = 'selected';
+                                        }
+                                    @endphp
+                                    <option {{ $selected }}>{{ $id->cantidad }}</option>
+                                    {{ $selected . ' b' }}
                                 @endforeach
                             </select>
+
                         </div>
                         <div class="container">
                             <div class="mb-6" id="elemento1">
@@ -297,8 +306,8 @@
                                 required>
                         </div>
                         @foreach ($id_pago as $id)
-                        <input type="hidden" name="id_pago" id="id_pago" value="{{ $id->id }}" />
-                    @endforeach
+                            <input type="hidden" name="id_pago" id="id_pago" value="{{ $id->id }}" />
+                        @endforeach
                         @foreach ($user as $id)
                             <input type="hidden" name="id_usuario" id="id_usuario" value="{{ $id->id }}" />
                         @endforeach

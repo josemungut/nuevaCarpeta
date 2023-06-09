@@ -46,7 +46,7 @@ class matriculaController extends Controller
     {
         $request->validate([
             'nombre' => 'required|string',
-            'telefono' => 'numeric|max:2'
+            'telefono' => 'numeric|max:9'
         ]);
 
         $clase = new matricula();

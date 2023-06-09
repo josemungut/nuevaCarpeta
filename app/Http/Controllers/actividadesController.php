@@ -9,6 +9,7 @@ use App\Models\tipo_actividad;
 use App\Models\tipo_actividades;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\DB;
 
 class actividadesController extends Controller
 {
@@ -19,8 +20,8 @@ class actividadesController extends Controller
      */
     public function index()
     {
-
         $clase4 = actividades::all();
+        // echo $clase4[0]->sala->aforo;
         return view('actividades.index')->with('actividades', $clase4);
     }
 
@@ -50,7 +51,6 @@ class actividadesController extends Controller
      */
     public function store(Request $request)
     {
-
         $clase = new actividades();
         $clase->nombre = $request->nombre;
         $clase->descripcion = $request->descripcion;
@@ -141,5 +141,12 @@ class actividadesController extends Controller
         $clase = actividades::findOrFail($id);
         $clase->delete();
         return redirect()->route('actividades.index')->with('status', "Clase borrado correctamente");
+    }
+
+    public function plazaslibres($id)
+    {
+        $clase = actividades::findOrFail($id);
+        return $clase->sala->aforo - DB::table('reservas')->where('id_actividad', $id)->count();
+
     }
 }

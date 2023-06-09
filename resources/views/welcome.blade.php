@@ -596,7 +596,6 @@
 
         <div class="pricing-wrapper clearfix" style="margin-bottom: 2%">
             <!-- Titulo -->
-
             <div class="pricing-table">
                 <h3 class="pricing-title">Basico</h3>
                 <div class="price" style="background-color: #F4F4F4">30€<sup>/ meses</sup></div>
@@ -609,7 +608,7 @@
                 <!-- Contratar / Comprar -->
                 <div class="table-buy">
                     <p>30€<sup>/ mes</sup></p>
-                    <a href="/matricula/create" class="pricing-action">Comprar</a>
+                    <a href="/matricula/create?price=30" class="pricing-action">Comprar</a>
                 </div>
             </div>
 
@@ -625,7 +624,7 @@
                 <!-- Contratar / Comprar -->
                 <div class="table-buy">
                     <p>180€<sup>/ 6 mes</sup></p>
-                    <a href="/matricula/create" class="pricing-action">Comprar</a>
+                    <a href="/matricula/create?price=180" class="pricing-action">Comprar</a>
                 </div>
             </div>
 
@@ -641,7 +640,7 @@
                 <!-- Contratar / Comprar -->
                 <div class="table-buy">
                     <p>360€<sup>/ 12 mes</sup></p>
-                    <a href="/matricula/create" class="pricing-action">Comprar</a>
+                    <a href="/matricula/create?price=360" class="pricing-action">Comprar</a>
                 </div>
             </div>
         </div>

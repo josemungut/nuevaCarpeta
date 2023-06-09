@@ -67,7 +67,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($id_tipo_actividad as $id)
                                     <option></option>
-                                    <option>{{ $id->descripcion }}</option>
+                                    <option value="{{$id->id}}">{{ $id->descripcion }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -78,7 +78,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($id_sala as $id)
                                     <option></option>
-                                    <option>{{ $id->descripcion }}</option>
+                                    <option value="{{$id->id}}">{{ $id->descripcion }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -89,7 +89,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($id_entrenador as $id)
                                     <option></option>
-                                    <option>{{ $id->nombre }}</option>
+                                    <option value="{{$id->id}}">{{ $id->nombre }}</option>
                                 @endforeach
                             </select>
                         </div>
