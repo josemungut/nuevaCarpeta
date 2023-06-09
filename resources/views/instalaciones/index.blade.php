@@ -227,35 +227,32 @@
         </div>
     </body>
 
-    <!-- <div class="footer">
-        <div class="contain">
-            <div class="col" id="politicas">
-                <h1 class="titulo">POLÍTICAS</h1>
-                <ul>
-                    <li><a href="aviso-legal">Aviso Legal</li>
-                    <li><a href="politicas-de-cookies">Política de cookies</li>
-                    <li><a href="politicas-de-privacidad">Política de privacidad</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1 class="titulo">DESCUBRE</h1>
-                <ul>
-                    <li><a href="/">Inicio</li>
-                    <li><a href="instalaciones">Instalaciones</li>
-                    <li>Actividades</li>>
-                </ul>
-            </div>
-            <div class="col">
-                <h1 class="titulo">CONTACTA</h1>
-                <ul>
-                    <li>649 14 36 97</li>
-                    <li>Calle Falsa nº123</li>
-                    <li>info@perfectbodylucena.com</li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
+    <div class="footer flex lg:flex-row flex-col lg:justify-between justify-center text-center">
+        <div class="col lg:w-1/3 w-full" id="politicas">
+            <h1 class="titulo">POLÍTICAS</h1>
+            <ul>
+                <li><a href="aviso-legal" style="color: white">Aviso Legal</a></li>
+                <li><a href="politicas-de-cookies" style="color: white">Política de cookies</a></li>
+                <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</a></li>
+            </ul>
         </div>
+        <div class="col lg:w-1/3 w-full">
+            <h1 class="titulo">DESCUBRE</h1>
+            <ul>
+                <li><a href="/" style="color: white">Inicio</a></li>
+                <li><a href="instalaciones" style="color: white">Instalaciones</a></li>
+                <li><a href="actividades" style="color: white">Actividades</a></li>
+            </ul>
+        </div>
+        <div class="col lg:w-1/3 w-full">
+            <h1 class="titulo">CONTACTA</h1>
+            <ul class="w-full">
+                <li style="color: white">649 14 36 97</li>
+                <li style="color: white">Calle Falsa nº123</li>
+                <li style="color: white">info@perfectbodylucena.com</li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
     </div>
 
     <div class="boton_whatsapp">
@@ -263,6 +260,113 @@
                 src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
     </div>
     <style>
+        .titulo{
+            margin-top: 15px;
+        }
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: black;
+        }
+
+        .footer .col {
+            height: auto;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        */ .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: orange;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {}
+
+        .titulo {
+            color: orange !important;
+        }
         .boton_whatsapp {
             transition-duration: 0.2s;
             transform: scale(1);
@@ -290,5 +394,5 @@
             text-align: center;
             vertical-align: middle;
         }
-    </style> -->
+    </style>
 </x-app-layout>

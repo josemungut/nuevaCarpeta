@@ -43,16 +43,14 @@
         }
 
         .footer .col {
-            width: 190px;
             height: auto;
-            float: left;
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             padding: 0px 20px 20px 20px;
         }
 
-        .footer .col h1 {
+        */ .footer .col h1 {
             margin: 0;
             padding: 0;
             font-family: inherit;
@@ -81,11 +79,6 @@
             transition: .2s;
             -webkit-transition: .2s;
             -moz-transition: .2s;
-        }
-
-        .social ul li {
-            display: inline-block;
-            padding-right: 5px !important;
         }
 
         .footer .col ul li:hover {
@@ -118,9 +111,7 @@
         }
 
         @media only screen and (max-width: 950px) {
-            .footer .col {
-                width: 33%;
-            }
+
 
             .footer .col h1 {
                 font-size: 14px;
@@ -132,9 +123,7 @@
         }
 
         @media only screen and (max-width: 500px) {
-            .footer .col {
-                width: 50%;
-            }
+
 
             .footer .col h1 {
                 font-size: 14px;
@@ -145,14 +134,13 @@
             }
         }
 
-        @media only screen and (max-width: 340px) {
-            .footer .col {
-                width: 100%;
-            }
-        }
+        @media only screen and (max-width: 340px) {}
 
-        */ .titulo {
+        .titulo {
             color: orange !important;
+        }
+        .titulo{
+            margin-top: 15px;
         }
 
         /*--------------------------------------------------------------
@@ -487,7 +475,8 @@ CSS Grid layout for wider screens, when browser supports grid:
                     max-width: 90%;
                 }
             }
-            #nombre{
+
+            #nombre {
                 margin-top: 15px !important;
             }
         }
@@ -514,14 +503,15 @@ CSS Grid layout for wider screens, when browser supports grid:
                     <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                         <div>
                             <h1 class="text-white font-semibold text-5xl">
-                                Bienvenido al Centro Deportivo <span class="text-orange-500" id="nombre">Perfect Body Lucena</span>
+                                Bienvenido al Centro Deportivo <span class="text-orange-500" id="nombre">Perfect Body
+                                    Lucena</span>
                             </h1>
                             <p class="mt-4 text-lg text-gray-300" style="color: orange">
                                 En Perfect Body Lucena, nos apasiona el deporte y estamos comprometidos a brindarte una
                                 experiencia excepcional. Nuestras instalaciones de primer nivel, un equipo dedicado de
                                 profesionales y una amplia gama de actividades te esperan para ayudarte a alcanzar tus
                                 metas de bienestar físico y mental.<br>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -570,11 +560,9 @@ CSS Grid layout for wider screens, when browser supports grid:
                 <cite>Tiger Woods</cite>
             </blockquote>
 
-            <p>¡En Perfect Body Lucena, tu bienestar es nuestra prioridad! Estamos ansiosos por acompañarte en tu viaje hacia una vida más saludable y activa!</p>
+            <p>¡En Perfect Body Lucena, tu bienestar es nuestra prioridad! Estamos ansiosos por acompañarte en tu viaje
+                hacia una vida más saludable y activa!</p>
             <p>¡Nos vemos pronto en el Centro Deportivo Perfect Body Lucena!
-
-
-
 
             </p>
         </article>
@@ -582,39 +570,36 @@ CSS Grid layout for wider screens, when browser supports grid:
 
 
 
-
-    </body>
-
-    </html>
-
-    <div class="footer">
-        <div class="contain">
-            <div class="col" id="politicas">
+        <div class="footer flex lg:flex-row flex-col lg:justify-between justify-center text-center">
+            <div class="col lg:w-1/3 w-full" id="politicas">
                 <h1 class="titulo">POLÍTICAS</h1>
                 <ul>
-                    <li><a href="aviso-legal" style="color: white">Aviso Legal</li>
-                    <li><a href="politicas-de-cookies" style="color: white">Política de cookies</li>
-                    <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</li>
+                    <li><a href="aviso-legal" style="color: white">Aviso Legal</a></li>
+                    <li><a href="politicas-de-cookies" style="color: white">Política de cookies</a></li>
+                    <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</a></li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col lg:w-1/3 w-full">
                 <h1 class="titulo">DESCUBRE</h1>
                 <ul>
-                    <li><a href="/" style="color: white">Inicio</li>
-                    <li><a href="instalaciones" style="color: white">Instalaciones</li>
-                    <li style="color: white">Actividades</li>
+                    <li><a href="/" style="color: white">Inicio</a></li>
+                    <li><a href="instalaciones" style="color: white">Instalaciones</a></li>
+                    <li><a href="actividades" style="color: white">Actividades</a></li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col lg:w-1/3 w-full">
                 <h1 class="titulo">CONTACTA</h1>
-                <ul>
+                <ul class="w-full">
                     <li style="color: white">649 14 36 97</li>
                     <li style="color: white">Calle Falsa nº123</li>
                     <li style="color: white">info@perfectbodylucena.com</li>
                 </ul>
             </div>
-
             <div class="clearfix"></div>
         </div>
-    </div>
+
+    </body>
+
+    </html>
+
 </x-app-layout>

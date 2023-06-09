@@ -34,6 +34,9 @@
         }
 
         /* STYLES SPECIFIC TO FOOTER  */
+        .titulo{
+            margin-top: 15px;
+        }
         .footer {
             width: 100%;
             position: relative;
@@ -42,16 +45,14 @@
         }
 
         .footer .col {
-            width: 190px;
             height: auto;
-            float: left;
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             padding: 0px 20px 20px 20px;
         }
 
-        .footer .col h1 {
+        */ .footer .col h1 {
             margin: 0;
             padding: 0;
             font-family: inherit;
@@ -80,11 +81,6 @@
             transition: .2s;
             -webkit-transition: .2s;
             -moz-transition: .2s;
-        }
-
-        .social ul li {
-            display: inline-block;
-            padding-right: 5px !important;
         }
 
         .footer .col ul li:hover {
@@ -117,9 +113,7 @@
         }
 
         @media only screen and (max-width: 950px) {
-            .footer .col {
-                width: 33%;
-            }
+
 
             .footer .col h1 {
                 font-size: 14px;
@@ -131,9 +125,7 @@
         }
 
         @media only screen and (max-width: 500px) {
-            .footer .col {
-                width: 50%;
-            }
+
 
             .footer .col h1 {
                 font-size: 14px;
@@ -144,13 +136,9 @@
             }
         }
 
-        @media only screen and (max-width: 340px) {
-            .footer .col {
-                width: 100%;
-            }
-        }
+        @media only screen and (max-width: 340px) {}
 
-        */ .titulo {
+        .titulo {
             color: orange !important;
         }
     </style>
@@ -652,6 +640,34 @@
             <a href="https://wa.me/649143697"><img
                     src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
         </div>
+        <div class="footer flex lg:flex-row flex-col lg:justify-between justify-center text-center">
+            <div class="col lg:w-1/3 w-full" id="politicas">
+                <h1 class="titulo">POLÍTICAS</h1>
+                <ul>
+                    <li><a href="aviso-legal" style="color: white">Aviso Legal</a></li>
+                    <li><a href="politicas-de-cookies" style="color: white">Política de cookies</a></li>
+                    <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="col lg:w-1/3 w-full">
+                <h1 class="titulo">DESCUBRE</h1>
+                <ul>
+                    <li><a href="/" style="color: white">Inicio</a></li>
+                    <li><a href="instalaciones" style="color: white">Instalaciones</a></li>
+                    <li><a href="actividades" style="color: white">Actividades</a></li>
+                </ul>
+            </div>
+            <div class="col lg:w-1/3 w-full">
+                <h1 class="titulo">CONTACTA</h1>
+                <ul class="w-full">
+                    <li style="color: white">649 14 36 97</li>
+                    <li style="color: white">Calle Falsa nº123</li>
+                    <li style="color: white">info@perfectbodylucena.com</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
         <style>
             .boton_whatsapp {
                 transition-duration: 0.2s;
@@ -686,34 +702,5 @@
 
 
     <!-- FOOTER START -->
-    <div class="footer">
-        <div class="contain">
-            <div class="col">
-                <h1 class="titulo">POLÍTICAS</h1>
-                <ul>
-                    <li><a href="aviso-legal" style="color: white">Aviso Legal</li>
-                    <li><a href="politicas-de-cookies" style="color: white">Política de cookies</li>
-                    <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>DESCUBRE</h1>
-                <ul>
-                    <li><a href="/" style="color: white">Inicio</li>
-                    <li><a href="instalaciones" style="color: white">Instalaciones</li>
-                    <li style="color: white">Actividades</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1>CONTACTA</h1>
-                <ul>
-                    <li style="color: white">649 14 36 97</li>
-                    <li style="color: white">Calle Falsa nº123</li>
-                    <li style="color: white">info@perfectbodylucena.com</li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
 
 </x-app-layout>
