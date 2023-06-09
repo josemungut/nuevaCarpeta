@@ -1,8 +1,9 @@
 <x-app-layout>
     <style>
-       .titulo{
+        .titulo {
             margin-top: 15px;
         }
+
         .footer {
             width: 100%;
             position: relative;
@@ -107,8 +108,6 @@
         .titulo {
             color: orange !important;
         }
-
-
     </style>
     <!DOCTYPE html>
     <html lang="es">
@@ -127,14 +126,23 @@
                     ofrecerte las instalaciones más modernas, un equipo de entrenadores profesionales y una amplia gama
                     de clases y programas de ejercicios para ayudarte a alcanzar tus objetivos de acondicionamiento
                     físico.</p>
-                <div class="w-86 flex flex-col gap-4">
-                    <a href="matricula/create"
-                        class="shadow-indigo-500/40 rounded-full bg-orange-500 px-4 py-4 w-auto text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
-                            type="button" style="margin-left: 40%">Inscríbete aqui</button></a>
-
-
+                <div class="flex flex-row w-full">
+                    <div class="lg:w-1/3 w-full">
+                        <a href="matricula/create?price=30"
+                            class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
+                                type="button">MATRÍCULA 30€ </button></a>
+                    </div>
+                    <div class="lg:w-1/3 w-full">
+                        <a href="matricula/create?price=180"
+                            class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
+                                type="button">MATRÍCULA 180€</button></a>
+                    </div>
+                    <div class="lg:w-1/3 w-full">
+                        <a href="matricula/create?price=360"
+                            class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
+                                type="button">MATRÍCULA 360€</button></a>
+                    </div>
                 </div>
-
             </div>
         </div>
         <div class=" md:w-1/2 order-4 md:order-none">
@@ -146,16 +154,27 @@
             <div class="md:hidden flex flex-col gap-4 p-4">
 
                 <p class="underline text-lg">Información Mineducación</p>
-                <p class="text-lg pr-20 ">Desarrolla soluciones de software y conviértete en un líder digital de uno de
-                    los sectores con mayor crecimiento del mercado. Obtén tres titulaciones a lo largo de tu formación
+                <p class="text-lg pr-20 ">Desarrolla soluciones de software y conviértete en un líder digital de uno
+                    de
+                    los sectores con mayor crecimiento del mercado. Obtén tres titulaciones a lo largo de tu
+                    formación
                 </p>
-                <div class="w-86 flex flex-col gap-4">
-                    <button type="button"
-                        class="shadow-indigo-500/40 rounded-full bg-orange-500 px-4 py-4 w-auto text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 ">Déjanos
-                        tus datos para mas información</button>
-                    <button type="button"
-                        class="shadow-indigo-500/40 rounded-full bg-orange-500 px-4 py-4 w-auto text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 ">Incríbte
-                        aqui</button>
+                <div class="flex lg:flex-row flex-col gap-10 w-full">
+                    <div class="lg:w-1/3 w-full">
+                        <a href="matricula/create?price=30"
+                            class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
+                            type="button">MATRÍCULA 30€</button></a>
+                    </div>
+                    <div class="lg:w-1/3 w-full">
+                        <a href="matricula/create?price=180"
+                            class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
+                            type="button">MATRÍCULA 180€</button></a>
+                    </div>
+                    <div class="lg:w-1/3 w-full">
+                        <a href="matricula/create?price=360"
+                            class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
+                            type="button">MATRÍCULA 360€</button></a>
+                    </div>
                 </div>
 
             </div>
