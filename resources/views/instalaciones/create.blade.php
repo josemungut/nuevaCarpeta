@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Añadir clase') }}
+            {{ __('Añadir Instalación') }}
         </h2>
     </x-slot>
 
@@ -45,8 +45,10 @@
                             {{ $errors->first('imagen') }}
 
                         </div>
-                        <button type="submit"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        <div class="conatiner2">
+                            <button type="submit" id="boton"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Insertar Instalación</button>
+                        </div>
                     </form>
 
                 </div>
@@ -59,6 +61,26 @@
                 alt="WhatsApp" /></a>
     </div>
     <style>
+        .conatiner2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Ajusta la altura del contenedor según tus necesidades */
+        }
+
+        #boton {
+            background-color: orange;
+            color: white
+        }
+
+
+        #boton:hover {
+            background-color: white;
+            color: orange;
+            border-color: orange;
+            border: 1px solid;
+        }
         .boton_whatsapp {
             transition-duration: 0.2s;
             transform: scale(1);

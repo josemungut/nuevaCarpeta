@@ -1,5 +1,10 @@
 <x-app-layout>
     <style>
+        #tarjeta {
+            text-align: center;
+            width: 100%;
+        }
+
         .imagen {
             width: 100%;
             margin-left: 50px;
@@ -7,11 +12,13 @@
 
         #nombre {
             padding-top: 25px;
-            margin-left: 110px;
+            text-align: center;
+            width: 100%;
         }
 
         #email {
-            margin-left: 90px;
+            text-align: center;
+            width: 100%;
             font-size: 15px;
         }
 
@@ -34,9 +41,10 @@
         }
 
         /* STYLES SPECIFIC TO FOOTER  */
-        .titulo{
+        .titulo {
             margin-top: 15px;
         }
+
         .footer {
             width: 100%;
             position: relative;
@@ -423,7 +431,7 @@
                                 Siente la <span class="text-orange-500">Energía</span>
                             </h1>
                             <p class="mt-4 text-lg text-gray-300">
-                                Bienvenidos a La Sala de Poder. Somos un centro de acondicionamiento físico y
+                                Bienvenidos a Perfect Body Lucena. Somos un centro de acondicionamiento físico y
                                 entrenamiento que se enfoca en llevarte a tu límite absoluto.
                                 <a href="/actividades"
                                     class="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white p-4 border border-orange-500 hover:border-transparent rounded inline-block mt-5 cursor-pointer">Visitar
@@ -451,7 +459,7 @@
                     </div>
                     <div class="w-full md:w-5/12 ml-auto mr-auto px-4" data-aos="fade-left">
                         <div class="md:pr-12">
-                            <small class="text-orange-500">Sobre nuestro centro deportivo</small>
+                            <small class="text-orange-500 mb-20" style="font-size: 15px">Sobre nuestro centro deportivo</small>
                             <h3 class="text-4xl uppercase font-bold">CONSTRUCCIÓN DEL CUERPO SEGURO</h3>
                             <p class="mt-4 text-lg leading-relaxed">
 
@@ -511,8 +519,11 @@
                             Conoce nuestros entrenadores
                         </h2>
                         <p class="text-lg leading-relaxed m-4">
-                            Our trainers are are here to dedicate the time and effort that
-                            you need to get in the best shape of your life
+                            Nuestros entrenadores están comprometidos con tu éxito y te brindarán un entrenamiento
+                            personalizado y adaptado a tus necesidades individuales. Ya sea que estés buscando perder
+                            peso, mejorar tu condición física, desarrollar habilidades deportivas específicas o
+                            simplemente mantenerte en forma, nuestros entrenadores están aquí para guiarte en cada paso
+                            del camino.
                         </p>
                     </div>
                 </div>
@@ -520,14 +531,15 @@
 
             </div>
             <!-- Card 2 -->
-            <div class="py-12">
-                <div id="container">
-                    <div class="grid grid-cols-3 grid-rows-1 p-6 ml-15" id="card">
-                        @foreach ($profesores as $profesor)
-                            <div class="max-w-sm ml-15" style="margin-top: -50px">
-                                <div class="p-5">
-                                    <img class="imagen" src="{{ asset($url . $profesor->imagen) }}">
 
+            <div class="my-12" id="tarjeta">
+                <div id="container">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full lg:w-5/6 lg:mx-auto">
+                        @foreach ($profesores as $profesor)
+                            <div class="max-w-sm" style="margin-top: -50px">
+                                <div class="p-5 lg:grid-cols-3 gap-8 w-full lg:w-5/6 lg:mx-auto">
+                                    <img class="imagen" style="margin-left: -2px"
+                                        src="{{ asset($url . $profesor->imagen) }}">
                                     <a href="#">
                                         <h5 id="nombre"
                                             class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
@@ -542,8 +554,6 @@
                     </div>
                 </div>
             </div>
-
-
         </section>
 
         <!-- Contact Header Section -->

@@ -175,15 +175,15 @@
     <body>
 
         <div class="text-center w-full">
-            <h1 class="text-xl font-bold" style="color: orange">Bienvenido al sitio web </h1>
-            <p class="text-lg font-semibold">¡Descubre nuestras últimas ofertas!</p>
+            <h1 class="text-xl font-bold" style="color: orange">Bienvenido a nuestras instalaciones </h1>
+            <p class="text-lg font-semibold">¡Descubrelas!</p>
 
         </div>
 
 
         <div class="my-12" id="tarjeta">
             <div id="container">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full lg:w-5/6 ml-2 mr-2 lg:mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full lg:w-5/6 lg:mx-auto">
                     @foreach ($hola as $profesor)
                         <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow"
                             style="background-color: black" id="tarjeta">
@@ -219,7 +219,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container2">
             @if (Auth::user()->tipo == 'admin')
                 <a href="{{ route('instalaciones.create') }}"><button type="button" id="boton"
                         class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">Añañdir instalaciones</button></a>
@@ -260,6 +260,10 @@
                 src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
     </div>
     <style>
+        .container2{
+            text-align: center;
+            width: 100%;
+        }
         .titulo{
             margin-top: 15px;
         }

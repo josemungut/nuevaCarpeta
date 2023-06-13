@@ -110,9 +110,4 @@ class reservarController extends Controller
         $clase->delete();
         return redirect()->back();
     }
-
-    public function numeroreserva($id_actividad)
-    {
-        // $clase= reserva
-    }
 }

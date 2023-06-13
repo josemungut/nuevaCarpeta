@@ -6,9 +6,8 @@
         }
 
         .hero1 {
-            background-image: url("https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80");
+            background-image: url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
             /*photo by okeykat for Unsplash */
-
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -48,6 +47,7 @@
         }
 
         .container {
+            margin: auto;
             display: flex;
             gap: 1.5rem;
             padding: 2rem;
@@ -56,6 +56,7 @@
 
 
         .testimonial {
+            text-align: center;
             flex: 1;
             padding: 2rem 1rem;
             border-radius: 1rem;
@@ -82,7 +83,7 @@
             margin: 0;
             padding: 0;
             color: white;
-            opacity: 0.25;
+            opacity: 0;
 
         }
 
@@ -129,8 +130,8 @@
         }
     </style>
     <section class="hero1">
-        <h1>Barkin' Baxter's Treat Truck</h1>
-        <p>Poppin' Up Soon at a Dog Park Near You!</p>
+        <h1>Bienvenido a tus reservas</h1>
+        <p style="color: orange">Aquí podrás ver las reservas que has solicitado en Perfect Body Lucena</p>
     </section>
 
     <section class="testimonials">
@@ -139,7 +140,8 @@
             @foreach ($reserva as $clase)
                 <div class="testimonial">
                     <h3>{{ Auth::user()->name }}</h3>
-                    <h3>{{ $clase->actividad->nombre }}</h3>
+                    <h3>{{ $clase->nombre }}</h3>
+                    <h3>{{$clase->actividad->nombre}}</h3>
                     <p> {{ $clase->fecha_reserva }}</p>
                     <form class="inline-block" action={{ route('reserva.destroy', ['reserva' => $clase->id]) }}
                         method="POST">
@@ -181,10 +183,11 @@
         <div class="clearfix"></div>
     </div>
 
-<style>
- .titulo{
+    <style>
+        .titulo {
             margin-top: 15px;
         }
+
         .footer {
             width: 100%;
             position: relative;
@@ -289,8 +292,7 @@
         .titulo {
             color: orange !important;
         }
-
-</style>
+    </style>
 
 
 </x-app-layout>

@@ -176,7 +176,6 @@
             <p>{{ $profesores->descripcion_corta }}</p><br>
             <p>{{ $profesores->hora }}</p><br>
             <p>{{ $profesores->fecha_inicio }}</p>
-            <p>{{ $profesores->fecha_fin }}</p>
         </div>
     </section>
 

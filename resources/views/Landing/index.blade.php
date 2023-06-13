@@ -21,7 +21,6 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, Sans-serif;
             background-color: black;
         }
 
@@ -55,8 +54,6 @@
         .footer .col h1 {
             margin: 0;
             padding: 0;
-            font-family: inherit;
-            font-size: 12px;
             line-height: 17px;
             padding: 20px 0px 5px 0px;
             color: rgba(255, 255, 255, 0.2);
@@ -73,8 +70,6 @@
 
         .footer .col ul li {
             color: #999999;
-            font-size: 14px;
-            font-family: inherit;
             font-weight: bold;
             padding: 5px 0px 5px 0px;
             cursor: pointer;
@@ -198,7 +193,6 @@ General styling
 --------------------------------------------------------------*/
         body {
             margin: 0;
-            font-family: 'Helvetica', 'Arial', sans-serif;
             font-size: 100%;
             font-size: 1.2em;
         }
@@ -386,7 +380,6 @@ CSS Grid layout for wider screens, when browser supports grid:
                 background:
                     repeating-linear-gradient(45deg, #fff0 0 1px, aliceblue 0 3px, #fff0 0 4px),
                     repeating-linear-gradient(-45deg, #fff 0 1px, aliceblue 0 3px, #fff0 0 4px);
-                font-family: 'Roboto Flex', Arial, Helvetica, serif;
             }
 
             body *,
@@ -491,7 +484,8 @@ CSS Grid layout for wider screens, when browser supports grid:
                     max-width: 90%;
                 }
             }
-            #nombre{
+
+            #nombre {
                 margin-top: 15px !important;
             }
         }
@@ -518,14 +512,15 @@ CSS Grid layout for wider screens, when browser supports grid:
                     <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                         <div>
                             <h1 class="text-white font-semibold text-5xl">
-                                Bienvenido al Centro Deportivo <span class="text-orange-500" id="nombre">Perfect Body Lucena</span>
+                                Bienvenido al Centro Deportivo <span class="text-orange-500" id="nombre">Perfect Body
+                                    Lucena</span>
                             </h1>
                             <p class="mt-4 text-lg text-gray-300" style="color: orange">
                                 En Perfect Body Lucena, nos apasiona el deporte y estamos comprometidos a brindarte una
                                 experiencia excepcional. Nuestras instalaciones de primer nivel, un equipo dedicado de
                                 profesionales y una amplia gama de actividades te esperan para ayudarte a alcanzar tus
                                 metas de bienestar físico y mental.<br>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -574,7 +569,8 @@ CSS Grid layout for wider screens, when browser supports grid:
                 <cite>Tiger Woods</cite>
             </blockquote>
 
-            <p>¡En Perfect Body Lucena, tu bienestar es nuestra prioridad! Estamos ansiosos por acompañarte en tu viaje hacia una vida más saludable y activa!</p>
+            <p>¡En Perfect Body Lucena, tu bienestar es nuestra prioridad! Estamos ansiosos por acompañarte en tu viaje
+                hacia una vida más saludable y activa!</p>
             <p>¡Nos vemos pronto en el Centro Deportivo Perfect Body Lucena!
 
 
@@ -623,8 +619,8 @@ CSS Grid layout for wider screens, when browser supports grid:
     </div>
 
     <div class="boton_whatsapp">
-        <a href="https://wa.me/649143697"><img
-                src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg" alt="WhatsApp" /></a>
+        <a href="https://wa.me/649143697"><img src="http://agromc.es/wp-content/uploads/2023/03/icono_whatsapp.svg"
+                alt="WhatsApp" /></a>
     </div>
     <style>
         .boton_whatsapp {

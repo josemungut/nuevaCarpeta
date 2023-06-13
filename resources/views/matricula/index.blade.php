@@ -109,24 +109,20 @@
             color: orange !important;
         }
     </style>
-    <!DOCTYPE html>
-    <html lang="es">
-    <section class="flex flex-col md:flex-row  md:h-[32rem]  xl:px-16 ">
-        <div class=" md:w-1/2 h-52 md:h-full p-4 flex flex-col xl:py-5 justify-between xl:pr-10">
-            <div class="relative h-5 flex justify-center order-2 md:order-none">
-            </div>
-            <div class="order-3 md:order-none">
-                <p class="text-3xl lg:text-5xl font-bold ">PERFECT BODY <span>- </span>LUCENA</p>
-            </div>
 
-            <div class="hidden md:flex flex flex-col gap-4">
+    <section class="flex flex-col md:flex-row  md:h-[32rem]">
+        <div class=" md:w-1/2 h-52 md:h-full p-4 flex flex-col xl:py-5 justify-between ">
 
-                <p class="text-lg lg:pr-20 ">Estamos encantados de que hayas decidido unirte a nuestra familia fitness y
+            <div class="hidden md:flex flex flex-col gap-4" style="margin-top: 150px">
+                <p class="text-2xl lg:text-4xl font-bold " style="text-align: center">PERFECT BODY LUCENA
+                </p>
+                <p class="text-lg lg:pr-20" style="margin-top: 10px">Estamos encantados de que hayas decidido unirte a
+                    nuestra familia fitness y
                     comenzar tu viaje hacia un estilo de vida saludable. Aquí en Perfect Body Lucena, nos enorgullece
                     ofrecerte las instalaciones más modernas, un equipo de entrenadores profesionales y una amplia gama
                     de clases y programas de ejercicios para ayudarte a alcanzar tus objetivos de acondicionamiento
                     físico.</p>
-                <div class="flex flex-row w-full">
+                <div class="flex flex-row w-full" style="margin-top: 50px">
                     <div class="lg:w-1/3 w-full">
                         <a href="matricula/create?price=30"
                             class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
@@ -152,28 +148,27 @@
             </div>
 
             <div class="md:hidden flex flex-col gap-4 p-4">
-
-                <p class="underline text-lg">Información Mineducación</p>
-                <p class="text-lg pr-20 ">Desarrolla soluciones de software y conviértete en un líder digital de uno
-                    de
-                    los sectores con mayor crecimiento del mercado. Obtén tres titulaciones a lo largo de tu
-                    formación
+                <p class="text-lg pr-20 ">Estamos encantados de que hayas decidido unirte a nuestra familia fitness y
+                    comenzar tu viaje hacia un estilo de vida saludable. Aquí en Perfect Body Lucena, nos enorgullece
+                    ofrecerte las instalaciones más modernas, un equipo de entrenadores profesionales y una amplia gama
+                    de clases y programas de ejercicios para ayudarte a alcanzar tus objetivos de acondicionamiento
+                    físico.
                 </p>
-                <div class="flex lg:flex-row flex-col gap-10 w-full">
-                    <div class="lg:w-1/3 w-full">
+                <div class="flex lg:flex-row flex-col gap-10 w-full" style="margin-top: 50px">
+                    <div class="lg:w-1/3 w-full" style="margin-left: 20%">
                         <a href="matricula/create?price=30"
                             class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
-                            type="button">MATRÍCULA 30€</button></a>
+                                type="button">MATRÍCULA 30€</button></a>
                     </div>
-                    <div class="lg:w-1/3 w-full">
+                    <div class="lg:w-1/3 w-full" style="margin-left: 20%">
                         <a href="matricula/create?price=180"
                             class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
-                            type="button">MATRÍCULA 180€</button></a>
+                                type="button">MATRÍCULA 180€</button></a>
                     </div>
-                    <div class="lg:w-1/3 w-full">
+                    <div class="lg:w-1/3 w-full" style="margin-left: 20%">
                         <a href="matricula/create?price=360"
                             class="w-full shadow-indigo-500/40 rounded-full bg-orange-500 px-7 py-4 text-md font-semibold text-white shadow-sm ring-1 ring-inset ring-orange-500 hover:text-gray-500 hover:bg-gray-50 "><button
-                            type="button">MATRÍCULA 360€</button></a>
+                                type="button">MATRÍCULA 360€</button></a>
                     </div>
                 </div>
 
@@ -184,7 +179,7 @@
     <!--Inicio titulaciones de ingenieria-->
     <section class=" xl:px-16 mt-20">
         <div class="flex justify-center mb-10">
-            <h1 class="font-bold text-5xl">MATRICULACIONES</h1>
+            <h1 class="font-bold text-4xl">MATRICULACIONES</h1>
         </div>
         <!DOCTYPE html>
         <html lang="en">
@@ -221,7 +216,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 px-8 lg:px-0">
             <div class="h-80 flex  flex-col items-start">
-                <p class="text-5xl font-bold mb-6">ACTIVIDADES</p>
+                <p class="text-4xl font-bold mb-6">ACTIVIDADES</p>
                 En Perect Body Lucena, nos enorgullece ofrecer una amplia gama de actividades deportivas
                 diseñadas para satisfacer todos los gustos e intereses. Ya seas un apasionado del fitness, un entusiasta
                 de los deportes acuáticos o alguien que disfruta de los deportes de equipo, tenemos algo para ti. ¡Echa
@@ -276,11 +271,10 @@
             </div>
         </div>
         <div class="px-30 lg:px-16 md:w-1/2" style="margin-top: 3%">
-            <p class="text-5xl font-bold mb-12">INSTALACIONES</p>
-            En [nombre del centro deportivo], nos enorgullece brindar un entorno excepcional para que puedas disfrutar
+            <p class="text-4xl font-bold mb-12">INSTALACIONES</p>
+            En Perfect Body Lucena, nos enorgullece brindar un entorno excepcional para que puedas disfrutar
             al máximo de tus actividades deportivas. Nuestras instalaciones de primera clase están diseñadas pensando en
-            tu comodidad, seguridad y rendimiento. ¡Aquí encontrarás todo lo que necesitas para alcanzar tus metas
-            deportivas y vivir un estilo de vida activo!
+            tu comodidad y seguridad.
             <ul class="px-5 gap-5 flex flex-col mb-6">
                 <li type="disc" class="hover:text-orange-500  cursor-pointer">
                     <p class="font-sans text-sm xl:text-lg ">Gimnasio.</p>

@@ -55,7 +55,6 @@ class actividadesController extends Controller
         $clase->nombre = $request->nombre;
         $clase->descripcion = $request->descripcion;
         $clase->fecha_inicio = $request->fecha_inicio;
-        $clase->fecha_fin = $request->fecha_fin;
         $clase->hora = $request->hora;
         $clase->id_tipo_actividad = $request->id_tipo_actividad;
         $clase->id_sala = $request->id_sala;
@@ -76,9 +75,8 @@ class actividadesController extends Controller
     public function show($id)
     {
         $bucarId = actividades::findOrFail($id);
-        $bucarId2 = tipo_actividades::findOrFail($id);
         $url = 'storage/';
-        return view('actividades.show')->with('profesores', $bucarId)->with('actividades', $bucarId2)->with('url', $url);
+        return view('actividades.show')->with('profesores', $bucarId)->with('url', $url);
     }
 
     /**
@@ -115,7 +113,6 @@ class actividadesController extends Controller
             $clase->nombre = $request->nombre;
             $clase->descripcion = $request->descripcion;
             $clase->fecha_inicio = $request->fecha_inicio;
-            $clase->fecha_fin = $request->fecha_fin;
             $clase->hora = $request->hora;
             $clase->imagen = $request->imagen;
             if (is_uploaded_file($request->imagen)) {

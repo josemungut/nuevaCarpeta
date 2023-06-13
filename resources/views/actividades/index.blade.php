@@ -18,7 +18,8 @@
     <div class="py-12 ">
         <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                    style="background-color: orange">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Nombre
@@ -51,8 +52,8 @@
                             <td class="px-6 py-4">
                                 {{ $clase->hora }}
                             </td>
-                             <td class="px-6 py-4">
-                                {{ $clase->plazaslibres()}}
+                            <td class="px-6 py-4">
+                                {{ $clase->plazaslibres() }}
                             </td>
                             <td>
                                 <a href="{{ route('actividades.show', ['actividade' => $clase->id]) }}"><button
@@ -63,11 +64,10 @@
                                         @csrf
                                         @method('POST')
                                         <input type="hidden" name="id_actividad" value="{{ $clase->id }}"> <button
-                                            type="submit"
+                                            type="submit" id="botonreservar"
                                             class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">RESERVAR</button>
                                     </form>
                                 @endif
-
                                 @if (Auth::user()->tipo == 'admin')
                                     <a href="{{ route('actividades.edit', ['actividade' => $clase->id]) }}"><button
                                             type="button" c
@@ -78,9 +78,11 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                            class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Borrar</button>
+                                            class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-400 dark:text-red-400 dark:hover:text-white dark:hover:bg-red-500 dark:focus:ring-red-900">Borrar</button>
                                     </form>
                                 @endif
+
+                                
                             </td>
                         </tr>
                     @endforeach
@@ -89,7 +91,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container2">
         @if (Auth::user()->tipo == 'admin')
             <a href="{{ route('actividades.create') }}"><button type="button" id="boton"
                     class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">Añañdir
@@ -130,10 +132,25 @@
         <div class="clearfix"></div>
     </div>
     <style>
+        /* #botonreservar::before {
+            content: "Hide";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+        } */
 
-        .titulo{
+        .container2 {
+            text-align: center;
+            width: 100%;
+        }
+
+        .titulo {
             margin-top: 15px;
         }
+
         .footer {
             width: 100%;
             position: relative;
@@ -238,6 +255,7 @@
         .titulo {
             color: orange !important;
         }
+
         .boton_whatsapp {
             transition-duration: 0.2s;
             transform: scale(1);
