@@ -428,7 +428,7 @@
                     <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                         <div>
                             <h1 class="text-white font-semibold text-5xl">
-                                Siente la <span class="text-orange-500">Energía</span>
+                                PERFECT BODY <span class="text-orange-500">LUCENA</span>
                             </h1>
                             <p class="mt-4 text-lg text-gray-300">
                                 Bienvenidos a Perfect Body Lucena. Somos un centro de acondicionamiento físico y
