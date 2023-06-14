@@ -66,7 +66,7 @@
                         </div>
                         <div class="mb-6">
                             <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">id_sala</label>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sala</label>
                             <select required name="id_sala" id="id_sala"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($id_sala as $id)
@@ -77,7 +77,7 @@
                         </div>
                         <div class="mb-6">
                             <label for="text"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">id_entrenador</label>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Entrenador</label>
                             <select required name="id_entrenador" id="id_entrenador"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 @foreach ($id_entrenador as $id)

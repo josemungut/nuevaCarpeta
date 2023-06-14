@@ -44,27 +44,25 @@
             width: 100%;
             position: relative;
             height: auto;
-            background-color: #070617;
+            background-color: black;
         }
 
         .footer .col {
-            width: 190px;
             height: auto;
-            float: left;
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             padding: 0px 20px 20px 20px;
         }
 
-        .footer .col h1 {
+        */ .footer .col h1 {
             margin: 0;
             padding: 0;
             font-family: inherit;
             font-size: 12px;
             line-height: 17px;
             padding: 20px 0px 5px 0px;
-            color: rgba(255, 255, 255, 0.2);
+            color: orange;
             font-weight: normal;
             text-transform: uppercase;
             letter-spacing: 0.250em;
@@ -86,11 +84,6 @@
             transition: .2s;
             -webkit-transition: .2s;
             -moz-transition: .2s;
-        }
-
-        .social ul li {
-            display: inline-block;
-            padding-right: 5px !important;
         }
 
         .footer .col ul li:hover {
@@ -123,9 +116,7 @@
         }
 
         @media only screen and (max-width: 950px) {
-            .footer .col {
-                width: 33%;
-            }
+
 
             .footer .col h1 {
                 font-size: 14px;
@@ -137,9 +128,7 @@
         }
 
         @media only screen and (max-width: 500px) {
-            .footer .col {
-                width: 50%;
-            }
+
 
             .footer .col h1 {
                 font-size: 14px;
@@ -150,13 +139,9 @@
             }
         }
 
-        @media only screen and (max-width: 340px) {
-            .footer .col {
-                width: 100%;
-            }
-        }
+        @media only screen and (max-width: 340px) {}
 
-        .titulo {
+        .titulo3 {
             color: #ffa500 !important;
         }
 
@@ -318,35 +303,32 @@
         cookies te adjuntamos este enlace
     </p>
     </body>
-    <div class="footer">
-        <div class="contain">
-            <div class="col" id="politicas">
-                <h1 class="titulo">POLÍTICAS</h1>
-                <ul>
-                    <li><a href="aviso-legal">Aviso Legal</li>
-                    <li><a href="politicas-de-cookies">Política de cookies</li>
-                    <li><a href="politicas-de-privacidad">Política de privacidad</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h1 class="titulo">DESCUBRE</h1>
-                <ul>
-                    <li><a href="/">Inicio</li>
-                    <li><a href="instalaciones">Instalaciones</li>
-                    <li>Actividades</li>>
-                </ul>
-            </div>
-            <div class="col">
-                <h1 class="titulo">CONTACTA</h1>
-                <ul>
-                    <li>649 14 36 97</li>
-                    <li>Calle Falsa nº123</li>
-                    <li>info@perfectbodylucena.com</li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
+    <div class="footer flex lg:flex-row flex-col lg:justify-between justify-center text-center">
+        <div class="col lg:w-1/3 w-full" id="politicas">
+            <h1 class="titulo3">POLÍTICAS</h1>
+            <ul>
+                <li><a href="aviso-legal" style="color: white">Aviso Legal</a></li>
+                <li><a href="politicas-de-cookies" style="color: white">Política de cookies</a></li>
+                <li><a href="politicas-de-privacidad" style="color: white">Política de privacidad</a></li>
+            </ul>
         </div>
+        <div class="col lg:w-1/3 w-full">
+            <h1 class="titulo3">DESCUBRE</h1>
+            <ul>
+                <li><a href="/" style="color: white">Inicio</a></li>
+                <li><a href="instalaciones" style="color: white">Instalaciones</a></li>
+                <li><a href="actividades" style="color: white">Actividades</a></li>
+            </ul>
+        </div>
+        <div class="col lg:w-1/3 w-full">
+            <h1 class="titulo3">CONTACTA</h1>
+            <ul class="w-full">
+                <li style="color: white">649 14 36 97</li>
+                <li style="color: white">Calle Falsa nº123</li>
+                <li style="color: white">info@perfectbodylucena.com</li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
     </div>
 
     <div class="boton_whatsapp">
